@@ -6,7 +6,7 @@ import {
   } from "react-router-dom";
 import routes from '../routes'
 const loading = (
-    <div className="pt-3 text-center">
+    <div className="">
       Loading
     </div>
 );

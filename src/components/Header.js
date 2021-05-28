@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Toggle from './Toggle'
 const Header = () => {
     const navLinks = [
         {path:'/', navTitle: "Home"},
@@ -10,7 +10,7 @@ const Header = () => {
         {path:'/', navTitle: "Game"}
     ]
     return(
-        <div className="bg-purple-300">
+        <div className="bg-gray-100 dark:bg-gray-700 dark:text-white p-3">
             <div className="flex flex-row d-margin">
                 <h1 className="text-3xl">Zero Neko</h1>
                 <ul className="flex flex-row ml-auto">
@@ -20,9 +20,11 @@ const Header = () => {
                         })
                     }
                 </ul>
+                <Toggle/>
             </div>
         </div>
         
     )
 }
+
 export default Header;
