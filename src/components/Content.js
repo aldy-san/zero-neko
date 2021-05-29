@@ -1,10 +1,17 @@
 import React, { Suspense } from 'react';
 import {
-    BrowserRouter as Router,
     Route,
     Switch
   } from "react-router-dom";
 import routes from '../routes'
+import {Helmet, HelmetProvider} from 'react-helmet-async'
+import { useLocation } from 'react-router-dom'
+
+function GetTitle() {
+    const location = useLocation().pathname;
+    let name = routes.find(o => o.path === location).name;
+    return name;
+}
 const loading = (
     <div className="">
       Loading
@@ -12,24 +19,31 @@ const loading = (
 );
 const Content = () => {
     return(
-        <Router>
-            <Suspense fallback={loading}>
-                <Switch>
-                    {routes.map((route, idx) => {
-                    return route.component && (
-                        <Route
-                        key={idx}
-                        path={route.path}
-                        exact={route.exact}
-                        name={route.name}
-                        render={props => (
-                            <route.component {...props} />
-                        )} />
-                    )
-                    })}
-                </Switch>
-            </Suspense>
-        </Router>
+        <>
+            <HelmetProvider>
+                <Helmet>
+                    <title>{GetTitle()}</title>
+                </Helmet>
+            </HelmetProvider>
+            <div className="bg-gray-50 dark:bg-gray-500 dark:text-white h-96">
+                <Suspense fallback={loading}>
+                    <Switch>
+                        {routes.map((route, idx) => {
+                        return route.component && (
+                            <Route
+                            key={idx}
+                            path={route.path}
+                            exact={route.exact}
+                            name={route.name}
+                            render={props => (
+                                <route.component {...props} title={route.name} />
+                            )} />
+                        )
+                        })}
+                    </Switch>
+                </Suspense>
+            </div>
+        </>
     )
 }
 
