@@ -1,13 +1,11 @@
 import React from 'react';
 import { ThemeContext } from './themeContext'
 
-const Toggle = () => {
+const Toggle = (props, ref) => {
     const { theme, setTheme } = React.useContext(ThemeContext)
-  
     function isDark() {
       return theme === 'dark'
     }
-    // console.log(isDark());
     let button;
     if (isDark()) {
       button =  <svg width="24" height="24" fill="none" viewBox="0 0 24 24">

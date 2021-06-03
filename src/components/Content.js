@@ -23,6 +23,7 @@ const Content = () => {
             <HelmetProvider>
                 <Helmet>
                     <title>{GetTitle()}</title>
+                    <link rel="icon" href="./assets/logo-icon-white.png"/>
                 </Helmet>
             </HelmetProvider>
             <div className="bg-gray-50 dark:bg-gray-500 dark:text-white h-96">

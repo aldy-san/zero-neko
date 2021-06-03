@@ -1,5 +1,7 @@
 import React from 'react';
 import Toggle from './Toggle'
+import { ThemeContext } from './themeContext'
+
 const Header = () => {
     const navLinks = [
         {path:'/', navTitle: "Home"},
@@ -9,10 +11,11 @@ const Header = () => {
         {path:'/', navTitle: "Words"},
         {path:'/', navTitle: "Game"}
     ]
+    const { theme } = React.useContext(ThemeContext)
     return(
         <div className="bg-gray-100 dark:bg-gray-700 dark:text-white p-3">
             <div className="flex flex-row d-margin">
-                <h1 className="text-3xl">Zero Neko</h1>
+                <img src={"./assets/" + (theme !== "dark" ? "logo-full.svg" : "logo-full-white.svg")} alt="logo-full" style={{height: '35px'}} />
                 <ul className="flex flex-row ml-auto">
                     {
                         navLinks.map((nav, index) => {
@@ -20,10 +23,10 @@ const Header = () => {
                         })
                     }
                 </ul>
+                {/* <Toggle ref={(childRef) => {console.log(childRef != null ? (childRef.getTheme()) : "");}}/> */}
                 <Toggle/>
             </div>
         </div>
-        
     )
 }
 
