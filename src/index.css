@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+*{
+    font-family: 'Varela Round', sans-serif;
+}
 /* ./src/index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.d-margin{
-    margin: 0 200px 0 200px;
-}

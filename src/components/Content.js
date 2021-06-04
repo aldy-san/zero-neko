@@ -26,7 +26,7 @@ const Content = () => {
                     <link rel="icon" href="./assets/logo-icon-white.png"/>
                 </Helmet>
             </HelmetProvider>
-            <div className="bg-gray-50 dark:bg-gray-500 dark:text-white h-96">
+            <div className="relative m-0 bg-gray-50 dark:bg-gray-800 dark:text-gray-100 pt-8 pb-16">
                 <Suspense fallback={loading}>
                     <Switch>
                         {routes.map((route, idx) => {
