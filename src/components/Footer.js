@@ -1,12 +1,17 @@
 import React from 'react';
+
+//Data
 import { ThemeContext } from './themeContext'
 import { navLinks } from "../data/navLinks";
 import { socialMedia } from "../data/socialMedia";
 import { me } from "../data/me";
+
+//Pict
 import logoIcon from '../assets/logo-icon.svg';
 import logoIconWhite from '../assets/logo-icon-white.svg';
+import ChildFooter from './ChildFooter';
 
-const Footer = (props) => {
+const Footer = () => {
     const { theme } = React.useContext(ThemeContext)
     return(
         <div className="bg-gray-100 dark:bg-gray-700 dark:text-white py-8">
@@ -16,36 +21,9 @@ const Footer = (props) => {
                     <p className="text-center lg:text-left w-52 mx-auto">Zeroneko is website platform for everyone to learn Japanese.</p>
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-3 col-span-12 lg:col-span-9 space-y-6 lg:space-y-0 lg:ml-20 text-center lg:text-left">
-                    <div className="col-3">
-                        <h3 className="font-semibold text-medium ">Navigation</h3>
-                        <ul className="space-y-1 mt-3">
-                            {
-                                navLinks.map((nav, index) => {
-                                    return <li className="transition-all delay-75 hover:text-primary" key={index}><a href={nav.path} >{nav.title}</a></li>
-                                })
-                            }
-                        </ul>
-                    </div>
-                    <div className="col-3">
-                        <h3 className="font-semibold text-medium ">Sosial Media</h3>
-                        <ul className="space-y-2 mt-3">
-                            {
-                                socialMedia.map((x, index) => {
-                                    return <li className="transition-all delay-75 hover:text-primary" key={index}><a href={x.path} >{x.title}</a></li>
-                                })
-                            }
-                        </ul>
-                    </div>
-                    <div className="col-3">
-                        <h3 className="font-semibold text-medium ">About Developer</h3>
-                        <ul className="space-y-2 mt-3">
-                            {
-                                me.map((x, index) => {
-                                    return <li className="transition-all delay-75 hover:text-primary" key={index}><a href={x.path} >{x.title}</a></li>
-                                })
-                            }
-                        </ul>
-                    </div>
+                    <ChildFooter title={'Navigation'} data={navLinks}/>
+                    <ChildFooter title={'Sosial Media'} data={socialMedia}/>
+                    <ChildFooter title={'About Developer'} data={me}/>
                 </div>
             </div>
         </div>

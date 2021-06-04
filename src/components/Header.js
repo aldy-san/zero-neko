@@ -17,7 +17,7 @@ const Header = () => {
                 <ul className="flex-row ml-auto hidden lg:flex space-x-5 my-2 mr-5">
                     {
                         navLinks.map((nav, index) => {
-                            return <li className="transition-all delay-150 hover:text-primary font-bold text-lg" key={index} ><a href={nav.path}>{nav.title}</a></li>
+                            return <li className="transition-all delay-150 hover:text-primary font-semibold text-lg tracking-wider" key={index} ><a href={nav.path}>{nav.title}</a></li>
                         })
                     }
                 </ul>

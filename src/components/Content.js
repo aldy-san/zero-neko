@@ -24,7 +24,7 @@ const Content = () => {
         <>
             <HelmetProvider>
                 <Helmet>
-                    <title>{GetTitle()}</title>
+                    <title>{GetTitle() + " - Zeroneko"}</title>
                     <link rel="icon" href="./assets/logo-icon-white.png"/>
                 </Helmet>
             </HelmetProvider>
