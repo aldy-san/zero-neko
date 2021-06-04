@@ -22,7 +22,7 @@ const Footer = () => {
                 </div>
                 <div className="grid grid-cols-3 lg:grid-cols-3 col-span-12 lg:col-span-9 space-y-0 mt-5 lg:mt-0 lg:ml-20 text-center lg:text-left">
                     <ChildFooter title={'Navigation'} data={navLinks}/>
-                    <ChildFooter title={'Sosial Media'} data={socialMedia}/>
+                    <ChildFooter title={'Social Media'} data={socialMedia}/>
                     <ChildFooter title={'Developer'} data={me}/>
                 </div>
             </div>
