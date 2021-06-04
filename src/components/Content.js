@@ -9,7 +9,9 @@ import { useLocation } from 'react-router-dom'
 
 function GetTitle() {
     const location = useLocation().pathname;
-    let name = routes.find(o => o.path === location).name;
+    let name = "404 Not Found";
+    if (routes.find(o => o.path === location)) 
+        name = routes.find(o => o.path === location).name;
     return name;
 }
 const loading = (
