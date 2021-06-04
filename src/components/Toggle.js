@@ -26,8 +26,8 @@ const Toggle = (props, ref) => {
                 </svg>;
     }
     return (
-      <label className="absolute lg:relative transition-all delay-150 mr-0 rounded-full px-2 py-1 lg:py-0 bg-gray-100 dark:bg-gray-600 dark:bg-opacity-40 hover:bg-gray-200 dark:hover:bg-gray-500">
-        <div className={"flex content-center lg:mt-2 cursor-pointer m-2 dark:text-yellow-400 text-gray-700 hover:bg-opacity-70"}>
+      <label className="absolute cursor-pointer lg:relative transition-all delay-150 mr-0 rounded-full px-2 py-1 lg:py-0 bg-gray-100 dark:bg-gray-600 dark:bg-opacity-40 hover:bg-gray-200 dark:hover:bg-gray-500">
+        <div className={"flex content-center lg:mt-2 m-2 dark:text-yellow-400 text-gray-700 hover:bg-opacity-70"}>
           {button}
         </div>
         <input
