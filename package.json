@@ -40,8 +40,9 @@
     ]
   },
   "devDependencies": {
+    "@tailwindcss/jit": "^0.1.18",
     "autoprefixer": "^9.8.6",
     "postcss": "^7.0.35",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.4"
   }
 }
