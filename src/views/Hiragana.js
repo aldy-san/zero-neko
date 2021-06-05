@@ -1,6 +1,6 @@
 import React from 'react';
 import { hiragana } from "../data/hiragana";
-
+import BoxKana from "../components/BoxKana";
 const Hiragana = () => {
     return(
         <>
@@ -14,10 +14,7 @@ const Hiragana = () => {
                                     return true;
                                 }
                                 return(
-                                    <li className={"box-border transition-all delay-75 grid-span-1"+(hira.start ? " col-start-"+hira.start : "")+" rounded-md bg-gray-50 dark:bg-gray-700 box-content p-4 shadow-md dark:shadow-mdWhite dark:hover:shadow-none hover:shadow-none"} key={index}>
-                                        <p className="text-xl lg:text-3xl font-black mb-2">{hira.kana}</p>
-                                        <p className="font-semibold text-sm lg:text-base text-primary">{hira.romaji}</p>
-                                    </li>
+                                    <BoxKana hira={hira} key={index} span={1}/>
                                 )
                             })
                         }
@@ -30,10 +27,7 @@ const Hiragana = () => {
                                         return true;
                                     }
                                     return(
-                                        <li className={"transition-all delay-75 col-span-1 "+(hira.start ? "col-start-"+hira.start : "")+" rounded-md bg-gray-50 dark:bg-gray-700 box-content p-4 shadow-md dark:shadow-mdWhite dark:hover:shadow-none hover:shadow-none"} key={index}>
-                                            <p className="text-xl lg:text-3xl font-black mb-2">{hira.kana}</p>
-                                            <p className="font-semibold text-sm lg:text-base text-primary">{hira.romaji}</p>
-                                        </li>
+                                        <BoxKana hira={hira} key={index} span={1}/>
                                     )
                                 })
                             }
@@ -45,10 +39,7 @@ const Hiragana = () => {
                                         return true;
                                     }
                                     return(
-                                        <li className={"transition-all delay-75 col-span-2 rounded-md bg-gray-50 dark:bg-gray-700 box-content p-4 shadow-md dark:shadow-mdWhite dark:hover:shadow-none hover:shadow-none"} key={index}>
-                                            <p className="text-xl lg:text-3xl font-black mb-2">{hira.kana}</p>
-                                            <p className="font-semibold text-sm lg:text-base text-primary">{hira.romaji}</p>
-                                        </li>
+                                        <BoxKana hira={hira} key={index} span={2}/>
                                     )
                                 })
                             }

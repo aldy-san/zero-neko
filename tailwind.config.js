@@ -3,7 +3,8 @@ module.exports = {
     './src/**/*.{js,jsx,ts,tsx}',
     './views/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
-    './public/index.html'
+    './public/index.html',
+    './safelist.txt'
   ],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
