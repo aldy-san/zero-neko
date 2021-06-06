@@ -12,15 +12,15 @@ export const navLinks = [
         title: "Katakana"
     },
     {
-        path:'/',
+        path:'/kanji',
         title: "Kanji"
     },
     {
-        path:'/',
+        path:'/words',
         title: "Words"
     },
     {
-        path:'/',
+        path:'/game',
         title: "Game"
     }
 ]
