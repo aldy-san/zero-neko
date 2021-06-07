@@ -6,7 +6,6 @@ import {
 import routes from '../routes'
 import {Helmet, HelmetProvider} from 'react-helmet-async'
 import { useLocation } from 'react-router-dom'
-import logoIconWhite from '../assets/logo-icon-white.svg';
 
 function GetTitle() {
     const location = useLocation().pathname;
@@ -26,7 +25,6 @@ const Content = () => {
             <HelmetProvider>
                 <Helmet>
                     <title>{GetTitle() + " - Zeroneko"}</title>
-                    <link rel="icon" href={logoIconWhite}/>
                 </Helmet>
             </HelmetProvider>
             <div className="relative m-0 bg-gray-50 dark:bg-gray-800 dark:text-gray-100 pt-8 pb-16">
