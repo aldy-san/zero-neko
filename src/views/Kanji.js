@@ -4,7 +4,7 @@ import RadioInput from '../components/RadioInput'
 import nihongo from 'nihongo';
 import axios from 'axios';
 import { isKanji } from 'nihongo/src/analysers';
-import { isRomaji, toHiragana, toKatakana } from 'wanakana';
+import { isRomaji, toKatakana } from 'wanakana';
 const BoxKanji = React.lazy(() => import('../components/BoxKanji'));
 
 const Kanji = () => {
