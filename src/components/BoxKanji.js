@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { useMediaQuery } from 'react-responsive'
+import axios from 'axios';
 const BoxKanji = (props) =>{
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-device-width: 1024px)'
@@ -7,24 +8,20 @@ const BoxKanji = (props) =>{
     const [kanji, setKanji] = useState();
     useEffect(() => {
         const fetchData = async () => {
-            try {
-                const result = await fetch('https://kanjiapi.dev/v1/kanji/'+props.data);
-                const body = await result.json();
-                setKanji(body);
-            } catch(err) {
-              console.error();
-            }
+            axios('https://kanjiapi.dev/v1/kanji/'+props.data)
+            .then(response => {
+                setKanji(response.data);
+            })
         }
         // setTimeout(fetchData, 3000)
         fetchData()
     },[props.data]);
-
     let n = 8;
     if (isDesktopOrLaptop) {
         n = 9
     }
     const loading = (
-        <li className="box-border transition-all delay-75 col-span-1 rounded-md bg-gray-50 dark:bg-gray-800 p-2 py-5 shadow-md dark:shadow-mdWhite dark:hover:shadow-none hover:shadow-none">
+        <li className="box-border transition-all delay-75 col-span-1 rounded-md bg-gray-50 dark:bg-gray-800 p-2 py-8 shadow-md dark:shadow-mdWhite dark:hover:shadow-none hover:shadow-none">
             <svg className="animate-spin mx-auto p" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 4.75V6.25" stroke="currentColor" ></path>
                 <path d="M17.1266 6.87347L16.0659 7.93413" stroke="currentColor" ></path>
@@ -40,11 +37,11 @@ const BoxKanji = (props) =>{
     if (kanji === undefined) {
         return loading;
     }
+    
     return(
         <li className="box-border transition-all delay-75 col-span-1 rounded-md bg-gray-50 dark:bg-gray-800 p-2 lg:p-4 shadow-md dark:shadow-md dark:hover:shadow-none hover:shadow-none">
             <p className="text-xl lg:text-3xl font-black mb-2">{kanji ? kanji.kanji : ""}</p>
-            <p className="font-semibold text-xs lg:text-base text-primary capitalize">{kanji ? (kanji.meanings[0].length >= n ? kanji.meanings[0].substr(0, n-3).trim() + '..' : kanji.meanings[0]) : ""}</p>
-            {/* jadiin p ke child component trus di react lazy */}
+            <p className="font-semibold text-xs lg:text-base text-primary capitalize whitespace-nowrap">{kanji.meanings[0] ? (kanji.meanings[0].length >= n ? kanji.meanings[0].substr(0, n-3).trim() + '..' : kanji.meanings[0]) : "X"}</p>
         </li>
     )
 }
