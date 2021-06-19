@@ -15,9 +15,11 @@ function GetTitle() {
     return name;
 }
 const loading = (
+    <>
     <div className="">
       Loading
     </div>
+    </>
 );
 const Content = () => {
     return(
@@ -27,7 +29,7 @@ const Content = () => {
                     <title>{GetTitle() + " - Zeroneko"}</title>
                 </Helmet>
             </HelmetProvider>
-            <div className="relative m-0 bg-gray-50 dark:bg-gray-800 dark:text-gray-100 pt-8 pb-16">
+            <main className="relative m-0 bg-gray-50 dark:bg-gray-800 dark:text-gray-100 pt-8 pb-16">
                 <Suspense fallback={loading}>
                     <Switch>
                         {routes.map((route, idx) => {
@@ -44,7 +46,7 @@ const Content = () => {
                         })}
                     </Switch>
                 </Suspense>
-            </div>
+            </main>
         </>
     )
 }

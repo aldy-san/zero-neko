@@ -14,7 +14,7 @@ import ChildFooter from './ChildFooter';
 const Footer = () => {
     const { theme } = React.useContext(ThemeContext)
     return(
-        <div className="bg-gray-100 dark:bg-gray-700 dark:text-white py-8">
+        <div className="bg-gray-100 dark:bg-gray-900 dark:text-white pt-8 pb-28 lg:pb-8 ">
             <div className="grid grid-cols-12 mx-8 lg:mx-32">
                 <div className="col-span-12 lg:col-span-3 mb-4 lg:mb-8">
                     <img className="mx-auto mb-5 w-20 lg:w-24" src={(theme !== "dark" ? logoIcon : logoIconWhite)} alt="logo-full" />
