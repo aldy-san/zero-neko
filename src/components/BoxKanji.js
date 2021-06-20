@@ -39,7 +39,7 @@ const BoxKanji = (props) =>{
     }
     
     return(
-        <li className="box-border transition-all delay-75 col-span-1 rounded-md bg-gray-50 dark:bg-gray-800 p-2 lg:p-4 shadow-md dark:shadow-md dark:hover:shadow-none hover:shadow-none">
+        <li className="box-border col-span-1 rounded-md bg-gray-50 dark:bg-gray-800 p-2 lg:p-4 shadow-md dark:shadow-md dark:hover:shadow-none hover:shadow-none">
             <p className="text-xl lg:text-3xl font-black mb-2">{kanji ? kanji.kanji : ""}</p>
             <p className="font-semibold text-xs lg:text-base text-primary capitalize whitespace-nowrap">{kanji.meanings[0] ? (kanji.meanings[0].length >= n ? kanji.meanings[0].substr(0, n-3).trim() + '..' : kanji.meanings[0]) : "X"}</p>
         </li>
