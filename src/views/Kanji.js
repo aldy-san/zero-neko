@@ -72,8 +72,8 @@ const Kanji = () => {
             <H1 span={"漢字"} text={"Kanji"}/>
             <div className="flex flex-col py-4 px-1 ">
                 <span className="text-sm pb-3 pl-1 pt-0 text-left">{'Filter: Searched "'+filter.split("/")[1]+'"'}</span>
-                <div className="flex border-t-2 pt-4 dark:border-gray-700">
-                    <div className="flex">
+                <div className="flex flex-col lg:flex-row border-t-2 pt-4 dark:border-gray-700">
+                    <div className="flex mb-3 lg:mb-0">
                         <div className="flex rounded-lg dark:bg-gray-700 shadow">
                             <div className="p-3 rounded-l-lg bg-gray-100 border-r-2 border-gray-300 dark:bg-gray-600 dark:border-gray-500">
                                 <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -84,9 +84,9 @@ const Kanji = () => {
                         </div>
                     </div>
                     {/* Modal Button */}
-                    <div className="relative ml-2 my-auto">
-                        <button onClick={() => {modal === true ? setModal(false) : setModal(true)}} className="flex bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-xl shadow hover:bg-gray-100 text-lg px-4 py-2 cursor-pointer">
-                            <span>Grade</span>
+                    <div className="relative lg:ml-2 my-auto">
+                        <button onClick={() => {modal === true ? setModal(false) : setModal(true)}} className="flex bg-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-lg shadow hover:bg-gray-100 text-lg px-4 py-2 cursor-pointer">
+                            <span className="text-base">Grade</span>
                             <svg className="transform scale-50 ml-2 my-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                 <path stroke="currentColor" d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/>
                             </svg>
