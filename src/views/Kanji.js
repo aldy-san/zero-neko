@@ -57,11 +57,11 @@ const Kanji = () => {
             setFilter("reading/"+newFilter)
         }
     }
-    const loading = (
-        <li >
+    // const loading = (
+    //     <li >
             
-        </li>
-    );
+    //     </li>
+    // );
     // useEffect(() => {
     //     console.log(kanjiList);
     //     console.log(kanjiList.length === 0);
