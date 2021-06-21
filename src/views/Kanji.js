@@ -93,12 +93,6 @@ const Kanji = () => {
                         </button>
                         {/* Modal */}
                         <div className={(modal ? "flex" : "hidden")+" absolute top-14 rounded-lg w-40 bg-white shadow-lg dark:bg-gray-700 flex-col ml-auto px-2 py-3"}>
-                            {/* <button className="absolute right-2 top-2 bg-blue-600" onClick={() => setModal(false)}>
-                                <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" d="M17.25 6.75L6.75 17.25"></path>
-                                    <path stroke="currentColor" d="M6.75 6.75L17.25 17.25"></path>
-                                </svg>
-                            </button> */}
                             <div className="flex flex-col space-y-2">
                                 <RadioInput grade="1" checked={filter} onSendGrade={(theGrade) => changeFilter(theGrade)}/>
                                 <RadioInput grade="2" checked={filter} onSendGrade={(theGrade) => changeFilter(theGrade)}/>

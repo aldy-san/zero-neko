@@ -27,6 +27,7 @@ const Content = () => {
             <HelmetProvider>
                 <Helmet>
                     <title>{GetTitle() + " - Zeroneko"}</title>
+                    <meta name="google-site-verification" content="Dk1ZxkDtsPCuEmk4LmuPfHuBBuZo_jdXvnEJ5J6U0VA" />
                 </Helmet>
             </HelmetProvider>
             <main className="relative m-0 bg-gray-50 dark:bg-gray-800 dark:text-gray-100 pt-8 pb-16">
