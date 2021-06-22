@@ -1,12 +1,11 @@
 import React, {useState, useEffect, Suspense} from 'react';
 import H1 from '../components/H1'
 import RadioInput from '../components/RadioInput'
-import nihongo, { isHiragana } from 'nihongo';
+import { isHiragana, isKana } from 'nihongo';
 import axios from 'axios';
 import { isKanji } from 'nihongo/src/analysers';
 import { isRomaji, toHiragana, toKatakana } from 'wanakana';
-import FallbackLoading from '../components/FallbackLoading';
-const BoxKanji = React.lazy(() => import('../components/BoxKanji'));
+import ContainerKanji from '../components/ContainerKanji';
 
 const Kanji = () => {
     const [kanjiList, setKanjiList] = useState([]);
@@ -17,7 +16,7 @@ const Kanji = () => {
             axios.get('https://kanjiapi.dev/v1/'+filter)
             .then(response => {
                 if (filter.split("/")[0] === "reading") {
-                    console.log(filter);
+                    // console.log(filter);
                     let hiragana = response.data.main_kanji.concat(response.data.name_kanji);
                     let katakana = null;
                     if (isHiragana(filter.split("/")[1])){
@@ -28,7 +27,7 @@ const Kanji = () => {
                         })
                         .catch (err => {
                             setKanjiList(hiragana) ;
-                            console.log("katakana not found");
+                            console.log(err);
                         })
                     } else {
                         setKanjiList(hiragana) ;
@@ -53,7 +52,7 @@ const Kanji = () => {
             setFilter("kanji/"+newFilter)
         } else if (isRomaji(newFilter)) {
             setFilter("reading/"+toHiragana(newFilter))
-        }  else if (nihongo.isKana(newFilter)){
+        }  else if (isKana(newFilter)){
             console.log(newFilter);
             setFilter("reading/"+newFilter)
         }
@@ -104,15 +103,7 @@ const Kanji = () => {
                 
             </div>
             <ul className="grid grid-cols-5 items-center lg:grid-cols-10 px-3 py-4 lg:p-6 mx-1 gap-2 lg:gap-3 rounded-lg lg:space-y-0 bg-gray-200 dark:bg-gray-900 shadow-inner">
-                <Suspense fallback={<FallbackLoading height="96"/>}>
-                    {
-                        kanjiList.map((kana, index) =>{
-                            return (
-                                <BoxKanji key={index} data={kana}/>
-                            )
-                        })
-                    }
-                </Suspense>
+                <ContainerKanji kanjiList={kanjiList}/>
             </ul>
         </div>
     )
