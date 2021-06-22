@@ -4,7 +4,7 @@ const BoxKanji = React.lazy(() => import('../components/BoxKanji'));
 
 const ContainerKana = (props) =>{
     if (props.kanjiList.length === 0) {
-        return <FallbackLoading height="96"/>
+        return <FallbackLoading height="96" text="Kanji Not Found" span={"Filter: "+props.filter.split("/")[1]}/>
     }
     return(
         <>
