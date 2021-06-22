@@ -17,9 +17,9 @@ function GetTitle() {
 }
 const loading = (
     <>
-    <div className="">
-      Loading
-    </div>
+        <div className="animate-pulse flex h-96 my-20">
+            <img className="m-auto" src={logoIconWhite} alt="logo-loading" width="100" />
+        </div>
     </>
 );
 const Content = () => {
@@ -34,6 +34,9 @@ const Content = () => {
             <main className="relative m-0 bg-gray-50 dark:bg-gray-800 dark:text-gray-100 pt-8 pb-16">
                 <Suspense fallback={loading}>
                     <Switch>
+                        <Route path="/loading" name="loading">
+                            {loading}
+                        </Route>
                         {routes.map((route, idx) => {
                         return route.component && (
                             <Route
@@ -46,6 +49,7 @@ const Content = () => {
                             )} />
                         )
                         })}
+                        
                     </Switch>
                 </Suspense>
             </main>
