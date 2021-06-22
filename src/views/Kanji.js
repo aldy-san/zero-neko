@@ -1,4 +1,4 @@
-import React, {useState, useEffect, Suspense} from 'react';
+import React, { useState, useEffect } from 'react';
 import H1 from '../components/H1'
 import RadioInput from '../components/RadioInput'
 import { isHiragana, isKana } from 'nihongo';
