@@ -10,7 +10,6 @@ col-start-9
 col-start-10
 col-start-11
 col-start-12
-
 col-span-1
 col-span-2
 col-span-3
@@ -23,3 +22,4 @@ col-span-9
 col-span-10
 col-span-11
 col-span-12
+my-48

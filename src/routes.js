@@ -13,6 +13,7 @@ const routes = [
     { path: '/kanji/:id', name: 'Kanji Detail', component: KanjiDetail },
     { path: '/kanji', name: 'Kanji', component: Kanji },
     { path: '/words', name: 'Words', component: Words },
+    { path: '/404', name: '404 Not Found', component: NotFound },
     { path: '*', name: '404 Not Found', component: NotFound },
 ]
 

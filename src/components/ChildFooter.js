@@ -7,7 +7,9 @@ const ChildFooter = (props) =>{
             <ul className="space-y-2 mt-2 lg:mt-3">
                 {
                     props.data.map((nav, index) => {
-                        return <li className="transition-all delay-75 text-sm lg:text-base hover:text-primary" key={index}><a href={nav.path} >{nav.title}</a></li>
+                        return <li className="transition-all delay-75 text-sm lg:text-base hover:text-primary py-1" key={index}>
+                                    <a className="" href={nav.path} >{nav.title}</a>
+                                </li>
                     })
                 }
             </ul>

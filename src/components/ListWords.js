@@ -6,7 +6,9 @@ const ListWords = (props) =>{
     if (props.datas === undefined) {
         return <FallbackLoading height="96"/>
     }
-    // console.log(props.datas);
+    if (!props) {
+        return <div>hai</div>
+    }
     return(
         <div className="flex flex-col border-b border-gray-400 py-4">
             <div className="flex">
