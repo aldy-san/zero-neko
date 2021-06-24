@@ -31,7 +31,7 @@ const KanjiDetail = () => {
     }
     return(
         <div className="flex flex-col mx-[20px] lg:mx-[160px] xl:mx-[240px]">
-            <div className="flex flex-col lg:flex-row lg:mb-0">
+            <div className="flex flex-col lg:flex-row lg:mb-0 mx-auto lg:space-x-20">
                 <div className="flex flex-col mx-auto text-center mr-auto mb-8">
                     <h1 className="text-7xl lg:text-9xl font-semibold mb-6 lg:mt-8 lg:mb-12 text-center lg:text-left">
                         {kanjiDetail ? kanjiDetail.kanji : ""}
@@ -62,19 +62,19 @@ const KanjiDetail = () => {
                         </thead>
                     </table>
                 </div>
-                <div className="w-full flex flex-col lg:p-12 text-xl text-center lg:text-left">
-                    <div className="flex flex-col space-y-4 mb-12">
+                <div className="flex flex-col lg:p-8 lg:ml-10 text-2xl text-center lg:text-left">
+                    <div className="flex flex-col space-y-6 mb-12">
                         <ListDetail text="Kun - Reading" datas={kanjiDetail.kun_readings}/>
                         <ListDetail text="On - Reading" datas={kanjiDetail.on_readings}/>
                         <ListDetail text="Meaning" datas={kanjiDetail.meanings}/>
-                        <div className="flex flex-col">
-                            <h2 className="font-bold mb-2">Words</h2>
-                            <ContainerListWords kanji={kanji} wordsLimit={wordsLimit} sendWordsLength={(wordsLength) => setWordsLength(wordsLength)}/>
-                        </div>
                     </div>
-                    <button className={((wordsLimit > wordsLength) || wordsLength === 0 ? "hidden " : "")+"mx-auto border-b-2 border-black dark:border-white hover:border-primary dark:hover:border-primary hover:text-primary hover:cursor-pointer"} onClick={() => {setWordsLimit(wordsLimit+5)}}>More Words</button>
                 </div>
             </div>
+            <div className="flex flex-col">
+                    <h2 className="font-bold mb-2 text-3xl text-center">Words</h2>
+                    <ContainerListWords kanji={kanji} wordsLimit={wordsLimit} sendWordsLength={(wordsLength) => setWordsLength(wordsLength)}/>
+                </div>
+            <button className={((wordsLimit > wordsLength) || wordsLength === 0 ? "hidden " : "")+"transition-colors mt-12 duration-300 mx-auto border-b-2 border-black dark:border-white hover:border-primary dark:hover:border-primary hover:text-primary hover:cursor-pointer"} onClick={() => {setWordsLimit(wordsLimit+5)}}>More Words</button>
         </div>
     )
 }
