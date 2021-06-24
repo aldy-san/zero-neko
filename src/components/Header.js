@@ -15,11 +15,11 @@ const Header = () => {
                 <a className="content-center hidden lg:flex" href="/"><img src={(theme !== "dark" ? logo : logoWhite)} alt="logo-full" width="180" /></a>
                 <a className="flex content-center mx-auto lg:hidden" href="/"><img src={(theme !== "dark" ? logoIcon : logoIconWhite)} alt="logo-full" width="35" /></a>
                 <ul className="flex-row ml-auto hidden lg:flex space-x-5 my-5 lg:py-3 mr-10">
-                    {
-                        navLinks.map((nav, index) => {
-                            return <li className="transition-all delay-150 hover:text-primary font-semibold text-lg tracking-wider" key={index} ><a href={nav.path}>{nav.title}</a></li>
-                        })
-                    }
+                {
+                    navLinks.map((nav, index) => {
+                        return <li className="transition-all delay-150 hover:text-primary font-semibold text-lg tracking-wider" key={index} ><a href={nav.path}>{nav.title}</a></li>
+                    })
+                }
                 </ul>
                 <Toggle/>
             </div>

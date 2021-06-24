@@ -11,6 +11,9 @@ function GetTitle() {
     let name = "404 Not Found";
     if (routes.find(o => o.path === location)) 
         name = routes.find(o => o.path === location).name;
+    else if(location.split("/")[1] === "kanji"){
+        name = location.split("/")[2]
+    }
     return name;
 }
 
@@ -38,7 +41,6 @@ const Content = () => {
                             )} />
                         )
                         })}
-                        
                     </Switch>
                 </Suspense>
             </main>

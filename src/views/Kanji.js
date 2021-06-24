@@ -100,7 +100,6 @@ const Kanji = () => {
                     </div>
                     {/* Modal End */}
                 </div>
-                
             </div>
             <ul className="grid grid-cols-4 lg:grid-cols-6 items-center xl:grid-cols-9 px-3 py-4 lg:p-6 mx-1 gap-2 lg:gap-3 rounded-lg lg:space-y-0 bg-gray-200 dark:bg-gray-900 shadow-inner">
                 <ContainerKanji kanjiList={kanjiList} filter={filter}/>
