@@ -31,17 +31,17 @@ const KanjiDetail = () => {
     }
     return(
         <div className="flex flex-col mx-[20px] lg:mx-[160px] xl:mx-[240px]">
-            <div className="flex flex-col lg:flex-row lg:mb-0 mx-auto lg:space-x-20">
+            <div className="flex flex-col lg:flex-row lg:mb-0 lg:space-x-20">
                 <div className="flex flex-col mx-auto text-center mr-auto mb-8">
                     <h1 className="text-7xl lg:text-9xl font-semibold mb-6 lg:mt-8 lg:mb-12 text-center lg:text-left">
-                        {kanjiDetail ? kanjiDetail.kanji : ""}
+                        {kanjiDetail ? kanjiDetail.kanji : "一"}
                     </h1>
                     <span>Heisig Keyword
                         <a href="https://en.wikipedia.org/wiki/Remembering_the_Kanji_and_Remembering_the_Hanzi" className="hover:text-primary hover:cursor-pointer inline-block">
                             <sup>?</sup>
                         </a>
                     </span>
-                    <p className="font-black text-xl lg:text-4xl mb-4 capitalize py-3">{kanjiDetail ? kanjiDetail.heisig_en : ""}</p>
+                    <p className="font-black text-xl lg:text-4xl mb-4 capitalize py-3">{kanjiDetail ? kanjiDetail.heisig_en : "One"}</p>
                     <table className="table-auto text-left">
                         <thead>
                             <tr>
@@ -62,7 +62,7 @@ const KanjiDetail = () => {
                         </thead>
                     </table>
                 </div>
-                <div className="flex flex-col lg:p-8 lg:ml-10 text-2xl text-center lg:text-left">
+                <div className="flex flex-col w-full lg:p-8 lg:ml-10 text-2xl text-center lg:text-left">
                     <div className="flex flex-col space-y-6 mb-12">
                         <ListDetail text="Kun - Reading" datas={kanjiDetail.kun_readings}/>
                         <ListDetail text="On - Reading" datas={kanjiDetail.on_readings}/>
