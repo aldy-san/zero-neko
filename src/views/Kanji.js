@@ -39,7 +39,11 @@ const Kanji = () => {
                 }
             })
             .catch(err => {
-                console.log(err);
+                axios.get('https://kanjiapi.dev/v1/reading/'+toKatakana(filter.split("/")[1]))
+                .then(response2 => {
+                    let katakana = response2.data.main_kanji.concat(response2.data.name_kanji);
+                    setKanjiList(katakana) ;
+                })
             })
         }
         fetchData()
