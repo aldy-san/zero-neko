@@ -8,7 +8,7 @@ const { theme } = React.useContext(ThemeContext)
 return(
         <div className={(!props.text ? "animate-pulse" : "")+" flex flex-col w-full col-span-full h-"+props.height+" py-"+props.paddingY+" my-"+props.marginY}>
             <img className={!props.text ? "m-auto" : "m-auto mb-4"} src={(theme !== "dark" ? logoIcon : logoIconWhite)} alt="logo-loading" width="100" />
-            <div className="mb-auto">
+            <div className="mb-auto text-center">
                 <p>{props.text}</p>
                 <span>{props.span}</span>
             </div>

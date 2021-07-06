@@ -18,7 +18,7 @@ const Header = () => {
                 <a className="flex content-center mx-auto lg:hidden" href="/"><img src={(theme !== "dark" ? logoIcon : logoIconWhite)} alt="logo-full" width="35" height="0"/></a>
                 <div className="hidden xl:flex justify-center ml-auto py-2">
                     <div className="flex rounded-full dark:bg-gray-700 shadow focus-within:ring-2 focus-within:ring-primary my-4 ">
-                        <input onChange={(e) => setSearch(e.target.value)} className="bg-transparent outline-none py-3 px-6 w-96" type="search" name="words" id="words" placeholder="English, Japanese, Kanji, Words" />
+                        <input autoComplete="off"   onChange={(e) => setSearch(e.target.value)} className="bg-transparent outline-none py-3 px-6 w-96" type="search" name="words" id="words" placeholder="English, Japanese, Kanji, Words" />
                         <Link to={search === "" ? "" : "/search?words="+search} className="transition-color duration-150 p-3 ml-auto  rounded-r-full bg-gray-100 dark:bg-gray-600 dark:border-gray-500 hover:text-white hover:bg-primary dark:hover:bg-primary ">
                             <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" d="M19.25 19.25L15.5 15.5M4.75 11C4.75 7.54822 7.54822 4.75 11 4.75C14.4518 4.75 17.25 7.54822 17.25 11C17.25 14.4518 14.4518 17.25 11 17.25C7.54822 17.25 4.75 14.4518 4.75 11Z"/>
