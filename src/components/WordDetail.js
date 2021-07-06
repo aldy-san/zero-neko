@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import { toRomaji } from 'wanakana'
-import { parseKanji } from 'nihongo';
+// import { parseKanji } from 'nihongo';
 import Tag from '../components/Tag'
 
 const WordDetail = (props) =>{
