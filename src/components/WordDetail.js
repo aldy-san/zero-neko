@@ -4,19 +4,19 @@ import { parseKanji } from 'nihongo';
 import Tag from '../components/Tag'
 
 const WordDetail = (props) =>{
-    useEffect(() => {
-        let wordParse = props.data.japanese[0].word.split("");
-        let kanjiParse = parseKanji(props.data.japanese[0].word);
-        console.log(wordParse);
-        console.log(kanjiParse);
-    }, [props])
+    // useEffect(() => {
+    //     let wordParse = props.data.japanese[0].word.split("");
+    //     let kanjiParse = parseKanji(props.data.japanese[0].word);
+    //     console.log(wordParse);
+    //     console.log(kanjiParse);
+    // }, [props])
     return(
         <div className="flex space-y-3 py-4 border-b-2 border-gray-300 dark:border-gray-600">
             <div className="flex flex-col w-full mr-4">
                 <div className="flex-none space-y-2">
                     <div className="flex flex-col space-y-3">
                         <p className="text-xl my-auto text-center">{props.data.japanese[0].reading}</p>
-                        <p className="text-4xl font-semibold my-auto text-center">{props.data.japanese[0].word.split("")}</p>
+                        <p className="text-4xl font-semibold my-auto text-center">{props.data.japanese[0].word}</p>
                         <p className="text-xl my-auto text-center capitalize">{toRomaji(props.data.japanese[0].reading)}</p>
                     </div>
                     <Tag data={props.data.is_common} color={"green"}/>
