@@ -27,7 +27,7 @@ const Toggle = () => {
     }
     return (
       <label className="absolute top-0 right-4 cursor-pointer lg:relative transition-all delay-150 mr-0 rounded-full lg:p-1 my-5 bg-gray-100 hover:bg-gray-200 dark:bg-gray-600 dark:bg-opacity-40  dark:hover:bg-gray-700">
-        <div className={"flex content-center lg:mt-2 m-2 dark:text-yellow-400 text-gray-700 hover:bg-opacity-70"}>
+        <div className={"flex content-center p-3 dark:text-yellow-400 text-gray-700 hover:bg-opacity-70"}>
           {button}
         </div>
         <input

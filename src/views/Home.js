@@ -9,16 +9,17 @@ const Home = () => {
                 </h1>
                 <div className="flex flex-col content-start text-center lg:text-left">
                     <h1 className="font-black text-xl lg:text-5xl">Learn Japanese from zero <span className="block mx-0 mt-2 lg:mt-5">with ZERONEKO.</span></h1>
-                    <p className="text-base lg:text-2xl mt-4 lg:mt-8 dark:text-gray-200">Learn Hiragana, Katakana, and Kanji with fun.</p>
-                    <a href="/" className="transition-all delay-150 flex self-start rounded-full font-medium mx-auto lg:mx-0 mt-4 lg:mt-8 px-4 py-2 lg:px-6 lg:py-4 lg:text-xl bg-gray-200 hover:bg-primary hover:text-white dark:bg-gray-700 dark:bg-opacity-80 dark:hover:bg-primary">
-                        Let's Start
-                        <span className="flex ml-1 lg:ml-3">
-                            <svg className="block my-auto " width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" d="M13.75 6.75L19.25 12L13.75 17.25"></path>
-                                <path stroke="currentColor" d="M19 12H4.75"></path>
+                    <p className="text-base lg:text-2xl mt-4 mb-6 lg:mt-8 dark:text-gray-200">Learn Hiragana, Katakana, and Kanji with fun.</p>
+                    <div className="flex">
+                        <div className="flex rounded-full dark:bg-gray-700 shadow focus-within:ring-2 focus-within:ring-primary">
+                            <input className="bg-transparent outline-none py-4 px-7" type="search" name="words" id="words" placeholder="Search" />
+                        </div>
+                        <button className="transition-color duration-150 ml-2 p-4 rounded-full bg-gray-100 dark:bg-gray-600 dark:border-gray-500 hover:text-white hover:bg-primary dark:hover:bg-primary">
+                            <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" d="M19.25 19.25L15.5 15.5M4.75 11C4.75 7.54822 7.54822 4.75 11 4.75C14.4518 4.75 17.25 7.54822 17.25 11C17.25 14.4518 14.4518 17.25 11 17.25C7.54822 17.25 4.75 14.4518 4.75 11Z"/>
                             </svg>
-                        </span>
-                    </a>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

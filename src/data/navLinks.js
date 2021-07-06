@@ -14,16 +14,16 @@ export const navLinks = [
         symbol:'あ',
         title: "Katakana"
     },
-    {
-        path:'/kanji',
-        symbol:'あ',
-        title: "Kanji"
-    },
-    {
-        path:'/words',
-        symbol:'あ',
-        title: "Words"
-    },
+    // {
+    //     path:'/kanji',
+    //     symbol:'あ',
+    //     title: "Kanji"
+    // },
+    // {
+    //     path:'/words',
+    //     symbol:'あ',
+    //     title: "Words"
+    // },
     {
         path:'/game',
         symbol:'あ',

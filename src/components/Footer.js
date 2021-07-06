@@ -26,7 +26,7 @@ const Footer = () => {
                     <ChildFooter title={'Developer'} data={me}/>
                 </div>
             </div>
-            <span className="text-center text-sm mx-auto mb-24 lg:mb-0 mt-6">Powered by <a className="hover:text-primary" href="https://kanjiapi.dev/">kanjiapi.dev</a></span>
+            {/* <span className="text-center text-sm mx-auto mb-24 lg:mb-0 mt-6">Powered by <a className="hover:text-primary" href="https://kanjiapi.dev/">kanjiapi.dev</a></span> */}
         </div>
     )
 }

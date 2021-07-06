@@ -5,14 +5,13 @@ import {Helmet, HelmetProvider} from 'react-helmet-async'
 import { useLocation } from 'react-router-dom'
 import logoIconWhite from '../assets/logo-icon-white.svg';
 import FallbackLoading from './FallbackLoading';
-import { isKanji } from 'nihongo';
 
 function GetTitle() {
     const location = useLocation().pathname;
     let name = "404 Not Found";
     if (routes.find(o => o.path === location)) 
         name = routes.find(o => o.path === location).name;
-    else if(location.split("/")[1] === "kanji" && isKanji(location.split("/")[2])){
+    else if(location.split("/")[1] === "search"){
         name = location.split("/")[2]
     }
     return name;
