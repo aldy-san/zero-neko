@@ -21,11 +21,10 @@ const Search = () => {
             if (searchParams.get('page')!=null) {
                 setPage(searchParams.get('page'))
             }
-            const proxy = 'https://cors-anywhere.herokuapp.com/'
+            const proxy = 'https://zeroneko-corsproxy.herokuapp.com/'
             const url = proxy + 'http://jisho.org/api/v1/search/words?keyword=' + wordParams + '&page=' + page;
             const response = await fetch(url);
             const json = await response.json();
-            console.log(json.data.length);
             if (json.data.length === 0) {
                 setCheckData(false);
             }
@@ -48,7 +47,7 @@ const Search = () => {
                         <p className="text-center">Searched for <span className="text-primary capitalize">{words}</span></p>
                         {/* <p>{!(words[0] === '"' && words[words.length - 1] === '"') ? "You can also try a search for \""+words+'"' : ""}</p> */}
                     </div>
-                    <ContainerWords data={data} checkData={checkData} page={page} changePage={(thePage) => setPage(thePage)}/>
+                    <ContainerWords data={data} checkData={checkData}/>
                 </div>
                 {/* <div className="lg:w-1/4">
                     <H2 text={"Kanji"}></H2>

@@ -17,7 +17,7 @@ const ContainerWords = (props) =>{
                     return <WordDetail key={idx} data={data}/>
                 })
             }
-            <button className={"transition-colors mt-12 duration-300 mx-auto border-b-2 border-black dark:border-white hover:border-primary dark:hover:border-primary hover:text-primary hover:cursor-pointer"} onClick={props.changePage(props.page+1)}>More Words</button>
+            {/* <button className={"transition-colors mt-12 duration-300 mx-auto border-b-2 border-black dark:border-white hover:border-primary dark:hover:border-primary hover:text-primary hover:cursor-pointer"} onClick={props.changePage(props.page+1)}>More Words</button> */}
         </div>
     )
 }
