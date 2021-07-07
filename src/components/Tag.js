@@ -8,12 +8,11 @@ const Tag = (props) =>{
         } else {
             if (props.data === true) {
                 setdata("Common Word")
-            } else {
-            }
+            } 
         }
     }, [props.data])
     return(
-        <p className={(data === "" ? "hidden " : "")+"text-center text-xs  rounded-lg mx-2 md:mx-8 px-2 py-1 " + ((props.color === "gray") ? "bg-gray-300 dark:bg-gray-600" : "bg-green-300 dark:bg-green-600")}>{data}</p>
+        <p className={((data === "" || !data) ? "hidden " : "")+"text-center text-xs  rounded-lg mx-2 md:mx-16 px-2 py-2 " + ((props.color === "gray") ? "bg-gray-300 dark:bg-gray-600" : "bg-green-300 dark:bg-green-600")}>{data}</p>
     )
 }
 

@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import { Redirect, useLocation } from 'react-router-dom'
 import ListDetail from '../components/ListDetail';
 import ContainerListWords from '../components/ContainerListWords';
+import {Helmet, HelmetProvider} from 'react-helmet-async'
+
 const KanjiDetail = () => {
     const location = useLocation().pathname;
     const kanji = location.split("/")[2];
@@ -30,6 +32,12 @@ const KanjiDetail = () => {
         return <Redirect to="/404"/>
     }
     return(
+        <>
+        <HelmetProvider>
+            <Helmet>
+                <title>{"Kanji - "+ kanji + " - Zeroneko"}</title>
+            </Helmet>
+        </HelmetProvider>
         <div className="flex flex-col mx-[20px] lg:mx-[160px] xl:mx-[240px]">
             <div className="flex flex-col lg:flex-row lg:mb-0 lg:space-x-20">
                 <div className="flex flex-col mx-auto text-center mr-auto mb-8">
@@ -76,6 +84,7 @@ const KanjiDetail = () => {
                 </div>
             <button className={((wordsLimit > wordsLength) || wordsLength === 0 ? "hidden " : "")+"transition-colors mt-12 duration-300 mx-auto border-b-2 border-black dark:border-white hover:border-primary dark:hover:border-primary hover:text-primary hover:cursor-pointer"} onClick={() => {setWordsLimit(wordsLimit+5)}}>More Words</button>
         </div>
+        </>
     )
 }
 

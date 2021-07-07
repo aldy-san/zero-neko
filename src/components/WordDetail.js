@@ -11,7 +11,7 @@ const WordDetail = (props) =>{
     //     console.log(kanjiParse);
     // }, [props])
     return(
-        <div className="flex flex-col lg:flex-row py-4 border-b-2 border-gray-300 dark:border-gray-600">
+        <div className="flex flex-col lg:flex-row py-4 border-b-2 border-gray-300 dark:border-gray-600 ">
             <div className="flex flex-col w-full mr-4">
                 <div className="flex-none space-y-2">
                     <div className="flex flex-col space-y-3">
