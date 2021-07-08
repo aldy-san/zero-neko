@@ -27,6 +27,8 @@ const ContainerListWords = (props) =>{
                 <div className="animate-pulse h-12 bg-gray-300 dark:bg-gray-600 rounded-lg"></div>
                 <div className="animate-pulse h-12 bg-gray-300 dark:bg-gray-600 rounded-lg"></div>
                 <div className="animate-pulse h-12 bg-gray-300 dark:bg-gray-600 rounded-lg"></div>
+                <div className="animate-pulse h-12 bg-gray-300 dark:bg-gray-600 rounded-lg"></div>
+                <div className="animate-pulse h-12 bg-gray-300 dark:bg-gray-600 rounded-lg"></div>
             </div>
         )
     }

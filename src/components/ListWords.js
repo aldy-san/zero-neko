@@ -1,14 +1,8 @@
 import React from 'react'
 import { toRomaji } from 'wanakana'
 import ChildListWords from './ChildListWords'
-import FallbackLoading from './FallbackLoading'
+
 const ListWords = (props) =>{
-    if (props.datas === undefined) {
-        return <FallbackLoading height="96"/>
-    }
-    if (!props) {
-        return <div>hai</div>
-    }
     return(
         <div className="flex flex-col border-b border-gray-400 py-4">
             <div className="flex">

@@ -10,7 +10,7 @@ const Search = () => {
     const [page, setPage] = useState(1);
     const [data, setData] = useState([]);
     const [checkData, setCheckData] = useState(true);
-    
+
     useEffect(() => {
         const fetchData = async () => {
             setData([]);
@@ -26,12 +26,11 @@ const Search = () => {
                 setCheckData(false);
             }
             setData(json.data);
-            console.log(json.data[0].slug);
             window.scrollTo(0, 0)
         }
         fetchData();
     },[page, location])
-    
+
     return(
         <>
         <HelmetProvider>

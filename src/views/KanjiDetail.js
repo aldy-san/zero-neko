@@ -27,7 +27,7 @@ const KanjiDetail = () => {
             fetchData()
         }
     }, [kanji])
-    
+
     if (!isKanji(kanji)) {
         return <Redirect to="/404"/>
     }
