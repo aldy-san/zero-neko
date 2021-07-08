@@ -41,7 +41,7 @@ const KanjiDetail = () => {
         <div className="flex flex-col mx-[20px] lg:mx-[160px] xl:mx-[240px]">
             <div className="flex flex-col lg:flex-row lg:mb-0 lg:space-x-20">
                 <div className="flex flex-col mx-auto text-center mr-auto mb-8">
-                    <h1 className="text-7xl lg:text-9xl font-semibold mb-6 lg:mt-8 lg:mb-12 text-center lg:text-left">
+                    <h1 className="text-7xl lg:text-9xl font-semibold mb-6 lg:mt-8 lg:mb-12 text-center">
                         {kanjiDetail ? kanjiDetail.kanji : "一"}
                     </h1>
                     <span>Heisig Keyword

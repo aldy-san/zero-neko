@@ -70,7 +70,7 @@ const Kanji = () => {
                 <span className="text-sm pb-3 pl-1 pt-0 text-left">{'Filter: Searched "'+filter.split("/")[1]+'"'}</span>
                 <div className="flex flex-col lg:flex-row border-t-2 pt-4 dark:border-gray-700">
                     {/* Search */}
-                    <div className="flex mb-3 lg:mb-0">
+                    {/* <div className="flex mb-3 lg:mb-0">
                         <div className="flex rounded-lg dark:bg-gray-700 shadow">
                             <div className="p-3 rounded-l-lg bg-gray-100 border-r-2 border-gray-300 dark:bg-gray-600 dark:border-gray-500">
                                 <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -79,7 +79,7 @@ const Kanji = () => {
                             </div>
                             <input className="bg-transparent outline-none py-3 px-6" type="search" name="searchKanji" id="searchKanji" onChange={(e) => changeFilter(e.target.value)} placeholder="Search" />
                         </div>
-                    </div>
+                    </div> */}
                     {/* Modal */}
                     <div className="relative lg:ml-2 my-auto">
                         {/* Button */}

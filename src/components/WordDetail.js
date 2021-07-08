@@ -1,25 +1,16 @@
 import React from 'react'
-import { toRomaji } from 'wanakana'
-// import { parseKanji } from 'nihongo';
 import Tag from '../components/Tag'
+import WordReading from '../components/WordReading'
 
 const WordDetail = (props) =>{
-    // useEffect(() => {
-    //     let wordParse = props.data.japanese[0].word.split("");
-    //     let kanjiParse = parseKanji(props.data.japanese[0].word);
-    //     console.log(wordParse);
-    //     console.log(kanjiParse);
-    // }, [props])
     return(
-        <div className="flex flex-col lg:flex-row py-4 border-b-2 border-gray-300 dark:border-gray-600 ">
+        <div className="flex flex-col lg:flex-row pt-4 pb-8 border-b-2 border-gray-300 dark:border-gray-600 ">
             <div className="flex flex-col w-full mr-4">
                 <div className="flex-none space-y-2">
                     <div className="flex flex-col space-y-3">
-                        <p className={(props.data.japanese[0].word ? "text-xl" : "text-4xl font-semibold")+" my-auto text-center"}>{props.data.japanese[0].reading}</p>
-                        <p className={(props.data.japanese[0].word ? "" : "hidden ")+"text-4xl font-semibold my-auto text-center"}>{props.data.japanese[0].word}</p>
-                        <p className="text-xl my-auto text-center capitalize">{toRomaji(props.data.japanese[0].reading)}</p>
+                        <WordReading reading={props.data.japanese[0].reading} word={props.data.japanese[0].word ? props.data.japanese[0].word : ""}/>
                     </div>
-                    <div className="flex lg:flex-col lg:space-y-3 py-2 justify-center">
+                    <div className="flex lg:flex-col gap-y-3 lg:gap-0 lg:space-y-3 py-2 justify-center flex-wrap sp">
                         <Tag data={props.data.is_common} color={"green"}/>
                         {
                             props.data.tags.map((tags,idx) => {

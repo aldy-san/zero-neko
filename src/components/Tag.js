@@ -12,7 +12,7 @@ const Tag = (props) =>{
         }
     }, [props.data])
     return(
-        <p className={((data === "" || !data) ? "hidden " : "")+"text-center text-xs  rounded-lg mx-2 md:mx-16 px-2 py-2 " + ((props.color === "gray") ? "bg-gray-300 dark:bg-gray-600" : "bg-green-300 dark:bg-green-600")}>{data}</p>
+        <p className={((data === "" || !data) ? "hidden " : "")+"text-center text-xs  rounded-lg mx-2 md:mx-16 p-1 lg:py-2 " + ((props.color === "gray") ? "bg-gray-300 dark:bg-gray-600 uppercase" : "bg-green-300 dark:bg-green-600")}>{data}</p>
     )
 }
 
