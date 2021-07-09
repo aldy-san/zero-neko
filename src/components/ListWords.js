@@ -11,7 +11,10 @@ const ListWords = (props) =>{
                     <span className="space-x-2">
                         {
                             props.datas.variants[0].written.split("").map((kana, idx) => {
-                                return <Link key={idx} to={"/kanji/"+kana} className={isKanji(kana) ? "transition-all duration-150 border-dashed border-b-2 hover:border-primary hover:text-5xl hover:text-primary" : ""}>{kana}</Link>;
+                                if (isKanji(kana)) {
+                                    return <Link key={idx} to={"/kanji/"+kana} className={isKanji(kana) ? "transition-all duration-150 border-dashed border-b-2 hover:border-primary hover:text-5xl hover:text-primary" : ""}>{kana}</Link>;
+                                }
+                                return <span key={idx}>{kana}</span>;
                             })
                         }
                     </span>

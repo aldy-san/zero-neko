@@ -1,7 +1,7 @@
 export const navLinks = [
     {
         path:'/',
-        symbol:'あ',
+        symbol:'home',
         title: "Home"
     },
     {
@@ -11,22 +11,17 @@ export const navLinks = [
     },
     {
         path:'/katakana',
-        symbol:'あ',
+        symbol:'ア',
         title: "Katakana"
     },
     {
         path:'/kanji',
-        symbol:'あ',
+        symbol:'漢字',
         title: "Kanji"
     },
-    // {
-    //     path:'/words',
-    //     symbol:'あ',
-    //     title: "Words"
-    // },
     {
         path:'/game',
-        symbol:'あ',
+        symbol:'game',
         title: "Game"
     }
 ]
