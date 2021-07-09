@@ -14,13 +14,12 @@ const KanjiDetail = () => {
     const [wordsLength, setWordsLength] = useState(0);
     useEffect(() => {
         const fetchData = async () => {
+            setKanjiDetail([])
             axios.get('https://kanjiapi.dev/v1/kanji/'+kanji)
             .then(response => {
-                // console.log(response.data)
                 setKanjiDetail(response.data)
-            })
-            .catch(err => {
-                console.log(err);
+                console.log("hai");
+                window.scrollTo(0, 0)
             })
         }
         if (isKanji(kanji)) {
@@ -42,7 +41,7 @@ const KanjiDetail = () => {
             <div className="flex flex-col lg:flex-row lg:mb-0 lg:space-x-20">
                 <div className="flex flex-col mx-auto text-center mr-auto mb-8">
                     <h1 className="text-7xl lg:text-9xl font-semibold mb-6 lg:mt-8 lg:mb-12 text-center">
-                        {kanjiDetail ? kanjiDetail.kanji : "一"}
+                        {kanjiDetail.kanji ? kanjiDetail.kanji : "-"}
                     </h1>
                     <span>Heisig Keyword
                         <a href="https://en.wikipedia.org/wiki/Remembering_the_Kanji_and_Remembering_the_Hanzi" className="hover:text-primary hover:cursor-pointer inline-block">
