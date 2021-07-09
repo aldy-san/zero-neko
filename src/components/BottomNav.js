@@ -5,10 +5,10 @@ import BottomNavLink from './BottomNavLink'
 const BottomNav = () =>{
     return(
         <nav className="fixed flex sm:hidden justify-center bottom-0 left-0 z-10 w-screen bg-white dark:bg-[#070d1a]">
-            <ul className="flex justify-between w-full mx-6 my-8 ">
+            <ul className="flex justify-between w-full mx-6 mt-8 mb-5">
                 {
                     navLinks.map((nav, idx) => {
-                        return  <BottomNavLink key={idx} symbol={nav.symbol} path={nav.path}/>
+                        return  <BottomNavLink key={idx} title={nav.title} symbol={nav.symbol} path={nav.path}/>
                     })
                 }
             </ul>

@@ -22,7 +22,7 @@ const BottomNavLink = (props) =>{
     }, [props])
     return(
         <li className="block transition-all w-2/12 delay-150 hover:text-primary text-xl text-center font-thin dark:text-white " >
-            <a href={props.path}>{Icon}</a>
+            <a aria-label={props.title} href={props.path}>{Icon}</a>
         </li>
     )
 }
