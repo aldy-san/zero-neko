@@ -10,7 +10,7 @@ const WordReading = (props) =>{
             <span className="space-x-2">
             {
                 props.word.split("").map((kana, idx) => {
-                    return <Link key={idx} to={"/kanji/"+kana} className={isKanji(kana) ? "transition-all duration-150 border-dashed  border-b-2 border-primary hover:text-6xl hover:text-primary" : ""}>{kana}</Link>;
+                    return <Link key={idx} to={"/kanji/"+kana} className={isKanji(kana) ? "transition-all duration-150 border-dashed border-b-2 hover:text-6xl hover:border-primary hover:text-primary" : ""}>{kana}</Link>;
                 })
             }
             </span>

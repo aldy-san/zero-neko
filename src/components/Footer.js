@@ -26,12 +26,18 @@ const Footer = () => {
                     <ChildFooter title={'Developer'} data={me}/>
                 </div>
             </div>
-            <span className="text-center text-sm mx-auto mb-24 lg:mb-0 mt-6">
-                Powered by 
-                <a className="hover:text-primary" href="https://kanjiapi.dev/" target="_blank" rel="noreferrer"> kanjiapi.dev </a> 
-                 and 
-                <a className="hover:text-primary" href="https://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api" target="_blank" rel="noreferrer"> Jisho API</a>
+            <div className="flex flex-col lg:flex-row text-center lg:text-left text-sm space-y-4 lg:space-y-0 mb-24 mt-6 mx-8 lg:mb-0 lg:mx-44">
+                <span className="">
+                    <span>Made with 🧡 by </span>
+                    <a className="hover:text-primary border-dashed border-b-2 hover:border-primary" href="https://aldi-maulidi.vercel.app/" target="_blank" rel="noreferrer">nursm </a> 
                 </span>
+                <span className="lg:ml-auto">
+                    <span>Powered by </span>
+                    <a className="hover:text-primary border-dashed border-b-2 hover:border-primary" href="https://kanjiapi.dev/" target="_blank" rel="noreferrer">kanjiapi.dev </a> 
+                    <span> and </span>
+                    <a className="hover:text-primary border-dashed border-b-2 hover:border-primary" href="https://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api" target="_blank" rel="noreferrer">Jisho API</a>
+                </span>
+            </div>
         </div>
     )
 }
