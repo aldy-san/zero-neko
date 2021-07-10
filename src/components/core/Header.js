@@ -1,14 +1,14 @@
 import React from 'react';
-import Toggle from './Toggle';
+import Toggle from '../Toggle';
 import { ThemeContext } from './themeContext';
-import { navLinks } from '../data/navLinks';
-import SearchBox from './SearchBox';
+import { navLinks } from '../../data/navLinks';
+import SearchBox from '../SearchBox';
 import {NavLink} from 'react-router-dom';
 
-import logo from '../assets/logo-full.svg';
-import logoWhite from '../assets/logo-full-white.svg';
-import logoIcon from '../assets/logo-icon.svg';
-import logoIconWhite from '../assets/logo-icon-white.svg';
+import logo from '../../assets/logo-full.svg';
+import logoWhite from '../../assets/logo-full-white.svg';
+import logoIcon from '../../assets/logo-icon.svg';
+import logoIconWhite from '../../assets/logo-icon-white.svg';
 
 const Header = () => {
     const { theme } = React.useContext(ThemeContext);

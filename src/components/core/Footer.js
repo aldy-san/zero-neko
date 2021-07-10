@@ -2,14 +2,14 @@ import React from 'react';
 import { ThemeContext } from './themeContext'
 
 //Data
-import { navLinks } from "../data/navLinks";
-import { socialMedia } from "../data/socialMedia";
-import { me } from "../data/me";
+import { navLinks } from "../../data/navLinks";
+import { socialMedia } from "../../data/socialMedia";
+import { me } from "../../data/me";
 
 //Pict
-import logoIcon from '../assets/logo-icon.svg';
-import logoIconWhite from '../assets/logo-icon-white.svg';
-import ChildFooter from './ChildFooter';
+import logoIcon from '../../assets/logo-icon.svg';
+import logoIconWhite from '../../assets/logo-icon-white.svg';
+import FooterChild from './FooterChild';
 
 const Footer = () => {
     const { theme } = React.useContext(ThemeContext)
@@ -21,9 +21,9 @@ const Footer = () => {
                     <p className="text-center text-base lg:text-medium lg:text-left w-60 lg:w-52 mx-auto">Zeroneko is website platform for everyone to learn Japanese.</p>
                 </div>
                 <div className="grid grid-cols-3 lg:grid-cols-3 col-span-12 lg:col-span-9 space-y-0 mt-5 lg:mt-0 lg:ml-20 text-center lg:text-left">
-                    <ChildFooter title={'Navigation'} data={navLinks}/>
-                    <ChildFooter targetBlank title={'Social'} data={socialMedia}/>
-                    <ChildFooter targetBlank title={'Developer'} data={me}/>
+                    <FooterChild title={'Navigation'} data={navLinks}/>
+                    <FooterChild targetBlank title={'Social'} data={socialMedia}/>
+                    <FooterChild targetBlank title={'Developer'} data={me}/>
                 </div>
             </div>
             <div className="flex flex-col lg:flex-row text-center lg:text-left text-sm space-y-4 lg:space-y-0 mb-32 mt-6 mx-8 lg:mb-0 lg:mx-44">

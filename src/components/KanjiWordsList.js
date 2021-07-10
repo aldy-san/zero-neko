@@ -1,9 +1,9 @@
 import React from 'react'
 import { isKanji, toRomaji } from 'wanakana'
-import ChildListWords from './ChildListWords'
+import KanjiWordMeanings from './KanjiWordMeanings'
 import { Link } from 'react-router-dom'
 
-const ListWords = (props) =>{
+const KanjiWordsList = (props) =>{
     return(
         <div className="flex flex-col border-b border-gray-400 py-4">
             <div className="flex">
@@ -12,7 +12,7 @@ const ListWords = (props) =>{
                         {
                             props.datas.variants[0].written.split("").map((kana, idx) => {
                                 if (isKanji(kana)) {
-                                    return <Link key={idx} to={"/kanji/"+kana} className={isKanji(kana) ? "transition-all duration-150 border-dashed border-b-2 hover:border-primary hover:text-5xl hover:text-primary" : ""}>{kana}</Link>;
+                                    return <Link key={idx} to={"/kanji/"+kana} className={isKanji(kana) ? "transition-all duration-150 border-dashed border-b-2 border-current hover:border-primary hover:text-5xl hover:text-primary" : ""}>{kana}</Link>;
                                 }
                                 return <span key={idx}>{kana}</span>;
                             })
@@ -27,7 +27,7 @@ const ListWords = (props) =>{
                     <div className="flex flex-col">
                     {
                         props.datas.meanings.map((meaning, index) => {
-                            return <ChildListWords key={index} num={props.datas.meanings.length > 1 ? index : -1} datas={meaning}/>
+                            return <KanjiWordMeanings key={index} num={props.datas.meanings.length > 1 ? index : -1} datas={meaning}/>
                         })
                     }
                     </div>
@@ -37,4 +37,4 @@ const ListWords = (props) =>{
     )
 }
 
-export default ListWords;
+export default KanjiWordsList;

@@ -1,7 +1,7 @@
 import React from 'react'
-import BoxKana from "../components/BoxKana";
+import BoxKana from "./KanaBox";
 
-const ContainerKana = (props) =>{
+const KanaContainer = (props) =>{
 return(
         <>
         <ul className="grid grid-cols-5 auto-rows-min grid-span-1 gap-2 lg:gap-4 lg:p-4">
@@ -46,4 +46,4 @@ return(
     )
 }
 
-export default ContainerKana;
+export default KanaContainer;

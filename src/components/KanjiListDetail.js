@@ -1,6 +1,6 @@
 import React from 'react'
-import ChildListDetail from './ChildListDetail'
-const ListDetail = (props) =>{
+import KanjiListDetailChild from './KanjiListDetailChild'
+const KanjiListDetail = (props) =>{
     if (props.datas === undefined) {
         return <></>
     } 
@@ -10,7 +10,7 @@ const ListDetail = (props) =>{
             <div className="flex gap-2 flex-wrap justify-center lg:justify-start">
                 {
                     props.datas.map((data, index) => {
-                        return <ChildListDetail key={index} data={data} />
+                        return <KanjiListDetailChild key={index} data={data} />
                     })
                 }
             </div>
@@ -18,4 +18,4 @@ const ListDetail = (props) =>{
     )
 }
 
-export default ListDetail;
+export default KanjiListDetail;

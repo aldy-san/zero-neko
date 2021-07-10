@@ -3,7 +3,7 @@ import { useMediaQuery } from 'react-responsive'
 import {Fade} from 'react-reveal';
 import axios from 'axios';
 
-const BoxKanji = (props) =>{
+const KanjiBox = (props) =>{
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-device-width: 1024px)'
     })
@@ -53,4 +53,4 @@ const BoxKanji = (props) =>{
     )
 }
 
-export default BoxKanji;
+export default KanjiBox;

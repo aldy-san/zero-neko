@@ -1,10 +1,10 @@
 import React, { Suspense } from 'react';
 import { Route, Switch } from "react-router-dom";
-import routes from '../routes'
+import routes from '../../routes'
 import {Helmet, HelmetProvider} from 'react-helmet-async'
 import { useLocation } from 'react-router-dom'
-import logoIconWhite from '../assets/logo-icon-white.svg';
-import FallbackLoading from './FallbackLoading';
+import FallbackLoading from '../FallbackLoading';
+import logoIconWhite from '../../assets/logo-icon-white.svg';
 
 const GetTitle = () => {
     const location = useLocation().pathname;

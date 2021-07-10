@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import { navLinks } from "../data/navLinks";
+import { navLinks } from "../../data/navLinks";
 import BottomNavLink from './BottomNavLink'
-import SearchBox from './SearchBox'
+import SearchBox from '../SearchBox'
 
 const BottomNav = () =>{
     const [searchShow, setSearchShow] = useState(false)

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ChildFooter = (props) =>{
+const FooterChild = (props) =>{
     return(
         <div className="col-3">
             <h1 className="font-semibold text-sm lg:text-base text-medium tracking-widest">{props.title}</h1>
@@ -17,4 +17,4 @@ const ChildFooter = (props) =>{
     )
 }
 
-export default ChildFooter;
+export default FooterChild;

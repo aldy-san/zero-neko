@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import H1 from '../components/H1'
-import RadioInput from '../components/RadioInput'
+import CategoryFilterButton from '../components/CategoryFilterButton'
 import axios from 'axios';
-import ContainerKanji from '../components/ContainerKanji';
+import KanjiContainer from '../components/KanjiContainer';
 
 const Kanji = () => {
     const [kanjiList, setKanjiList] = useState([]);
@@ -44,13 +44,13 @@ const Kanji = () => {
                         {/* Modal */}
                         <div className={(modal ? "flex" : "hidden")+" absolute top-14 rounded-lg w-40 bg-white shadow-lg dark:bg-gray-700 flex-col ml-auto px-2 py-3 z-10"}>
                             <div className="flex flex-col space-y-2">
-                                <RadioInput category="grade-1" checked={filter} onSend={(theFilter) => changeFilter(theFilter)}/>
-                                <RadioInput category="grade-2" checked={filter} onSend={(theFilter) => changeFilter(theFilter)}/>
-                                <RadioInput category="grade-3" checked={filter} onSend={(theFilter) => changeFilter(theFilter)}/>
-                                <RadioInput category="grade-4" checked={filter} onSend={(theFilter) => changeFilter(theFilter)}/>
-                                <RadioInput category="grade-5" checked={filter} onSend={(theFilter) => changeFilter(theFilter)}/>
-                                <RadioInput category="grade-6" checked={filter} onSend={(theFilter) => changeFilter(theFilter)}/>
-                                <RadioInput category="grade-8" checked={filter} onSend={(theFilter) => changeFilter(theFilter)}/>
+                                <CategoryFilterButton category="grade-1" checked={filter} onSend={(theFilter) => changeFilter(theFilter)}/>
+                                <CategoryFilterButton category="grade-2" checked={filter} onSend={(theFilter) => changeFilter(theFilter)}/>
+                                <CategoryFilterButton category="grade-3" checked={filter} onSend={(theFilter) => changeFilter(theFilter)}/>
+                                <CategoryFilterButton category="grade-4" checked={filter} onSend={(theFilter) => changeFilter(theFilter)}/>
+                                <CategoryFilterButton category="grade-5" checked={filter} onSend={(theFilter) => changeFilter(theFilter)}/>
+                                <CategoryFilterButton category="grade-6" checked={filter} onSend={(theFilter) => changeFilter(theFilter)}/>
+                                <CategoryFilterButton category="grade-8" checked={filter} onSend={(theFilter) => changeFilter(theFilter)}/>
                                 {/* <RadioInput category="joyo" checked={filter} onSend={(theFilter) => changeFilter(theFilter)}/>
                                 <RadioInput category="jinmeiyo" checked={filter} onSend={(theFilter) => changeFilter(theFilter)}/> */}
                             </div>
@@ -60,7 +60,7 @@ const Kanji = () => {
                 </div>
             </div>
             <ul className="grid grid-cols-4 lg:grid-cols-6 items-center xl:grid-cols-9 px-3 py-4 lg:p-6 mx-1 gap-2 lg:gap-3 rounded-lg lg:space-y-0 bg-gray-200 dark:bg-gray-900 shadow-inner">
-                <ContainerKanji kanjiList={kanjiList} filter={filter} checkData={checkData}/>
+                <KanjiContainer kanjiList={kanjiList} filter={filter} checkData={checkData}/>
             </ul>
         </div>
     )

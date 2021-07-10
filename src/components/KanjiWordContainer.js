@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { isKanji } from 'nihongo/src/analysers';
 import React, { useEffect, useState } from 'react'
-import ListWords from '../components/ListWords';
+import KanjiWordsList from './KanjiWordsList';
 
-const ContainerListWords = (props) =>{
+const KanjiWordContainer = (props) =>{
     const [kanjiWords, setKanjiWords] = useState([]);
     
     useEffect(() => {
@@ -36,11 +36,11 @@ const ContainerListWords = (props) =>{
         <div className="flex flex-col gap-2 flex-wrap justify-center lg:justify-start">
             {
                 kanjiWords.slice(0,props.wordsLimit).map((datas, index) => {
-                    return <ListWords key={index} datas={datas}/>
+                    return <KanjiWordsList key={index} datas={datas}/>
                 })
             }
         </div>
     )
 }
 
-export default ContainerListWords;
+export default KanjiWordContainer;

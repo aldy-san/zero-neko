@@ -1,5 +1,5 @@
 import React from 'react'
-import Tag from '../components/Tag'
+import WordTag from './WordTag'
 import WordReading from '../components/WordReading'
 
 const WordDetail = (props) =>{
@@ -11,15 +11,15 @@ const WordDetail = (props) =>{
                         <WordReading reading={props.data.japanese[0].reading} word={props.data.japanese[0].word ? props.data.japanese[0].word : ""}/>
                     </div>
                     <div className="flex lg:flex-col gap-y-3 lg:gap-0 lg:space-y-3 py-2 justify-center flex-wrap sp">
-                        <Tag data={props.data.is_common} color={"green"}/>
+                        <WordTag data={props.data.is_common} color={"green"}/>
                         {
                             props.data.tags.map((tags,idx) => {
-                                return <Tag key={idx} data={tags} color={"gray"}/>
+                                return <WordTag key={idx} data={tags} color={"gray"}/>
                             })
                         }
                         {
                             props.data.jlpt.map((tags,idx) => {
-                                return <Tag key={idx} data={tags} color={"gray"}/>
+                                return <WordTag key={idx} data={tags} color={"gray"}/>
                             })
                         }
                     </div>

@@ -1,8 +1,8 @@
 import React from 'react'
 import FallbackLoading from './FallbackLoading';
-const BoxKanji = React.lazy(() => import('../components/BoxKanji'));
+const KanjiBox = React.lazy(() => import('./KanjiBox'));
 
-const ContainerKana = (props) =>{
+const KanjiContainer = (props) =>{
     if (props.kanjiList.length === 0) {
         if (props.checkData) {
             return <FallbackLoading height="96" span="Loading for kanji"/>
@@ -15,7 +15,7 @@ const ContainerKana = (props) =>{
             {
                 props.kanjiList.map((kana, index) =>{
                     return (
-                        <BoxKanji key={index} data={kana}/>
+                        <KanjiBox key={index} data={kana}/>
                     )
                 })
             }
@@ -23,4 +23,4 @@ const ContainerKana = (props) =>{
     )
 }
 
-export default ContainerKana;
+export default KanjiContainer;

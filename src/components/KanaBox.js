@@ -1,7 +1,7 @@
 import React from 'react'
 import {Fade} from 'react-reveal';
 
-const BoxKana = (props) =>{
+const KanaBox = (props) =>{
     return(
         <Fade>
             <li className={"box-border transition-all delay-75 col-span-"+props.span+(props.data.start ? " col-start-"+props.data.start : "")+" rounded-md bg-gray-50 dark:bg-gray-800 p-2 lg:p-4 shadow-md dark:hover:shadow-none hover:shadow-none"}>
@@ -13,4 +13,4 @@ const BoxKana = (props) =>{
     )
 }
 
-export default BoxKana;
+export default KanaBox;

@@ -2,8 +2,8 @@ import axios from 'axios';
 import { isKanji } from 'nihongo/src/analysers';
 import React, { useEffect, useState } from 'react';
 import { Redirect, useLocation } from 'react-router-dom'
-import ListDetail from '../components/ListDetail';
-import ContainerListWords from '../components/ContainerListWords';
+import KanjiListDetail from '../components/KanjiListDetail';
+import KanjiWordContainer from '../components/KanjiWordContainer';
 import {Helmet, HelmetProvider} from 'react-helmet-async'
 
 const KanjiDetail = () => {
@@ -71,15 +71,15 @@ const KanjiDetail = () => {
                 </div>
                 <div className="flex flex-col w-full lg:p-8 lg:ml-10 text-2xl text-center lg:text-left">
                     <div className="flex flex-col space-y-6 mb-12">
-                        <ListDetail text="Kun - Reading" datas={kanjiDetail.kun_readings}/>
-                        <ListDetail text="On - Reading" datas={kanjiDetail.on_readings}/>
-                        <ListDetail text="Meaning" datas={kanjiDetail.meanings}/>
+                        <KanjiListDetail text="Kun - Reading" datas={kanjiDetail.kun_readings}/>
+                        <KanjiListDetail text="On - Reading" datas={kanjiDetail.on_readings}/>
+                        <KanjiListDetail text="Meaning" datas={kanjiDetail.meanings}/>
                     </div>
                 </div>
             </div>
             <div className="flex flex-col">
                     <h2 className="font-bold mb-2 text-3xl text-center">Words</h2>
-                    <ContainerListWords kanji={kanji} wordsLimit={wordsLimit} sendWordsLength={(wordsLength) => setWordsLength(wordsLength)}/>
+                    <KanjiWordContainer kanji={kanji} wordsLimit={wordsLimit} sendWordsLength={(wordsLength) => setWordsLength(wordsLength)}/>
                 </div>
             <button className={((wordsLimit > wordsLength) || wordsLength === 0 ? "hidden " : "")+"transition-colors mt-12 duration-300 mx-auto border-b-2 border-black dark:border-white hover:border-primary dark:hover:border-primary hover:text-primary hover:cursor-pointer"} onClick={() => {setWordsLimit(wordsLimit+5)}}>More Words</button>
         </div>

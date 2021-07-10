@@ -1,5 +1,5 @@
 import React from 'react'
-import { ThemeContext } from './themeContext'
+import { ThemeContext } from './core/themeContext'
 import logoIcon from '../assets/logo-icon.svg';
 import logoIconWhite from '../assets/logo-icon-white.svg';
 

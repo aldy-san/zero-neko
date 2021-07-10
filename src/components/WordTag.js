@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 
-const Tag = (props) =>{
+const WordTag = (props) =>{
     const [data, setdata] = useState("");
     useEffect(() => {
         if (typeof(props.data) != "boolean") {
@@ -16,4 +16,4 @@ const Tag = (props) =>{
     )
 }
 
-export default Tag;
+export default WordTag;
