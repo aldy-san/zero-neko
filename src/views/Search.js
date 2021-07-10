@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import React, {useEffect, useState} from 'react';
 import H1 from '../components/H1'
-import ContainerWords from "../components/ContainerWords";
+import WordsContainer from "../components/WordsContainer";
 import {Helmet, HelmetProvider} from 'react-helmet-async'
 
 const Search = () => {
@@ -46,7 +46,7 @@ const Search = () => {
                         <p className="text-center">Searched for <span className="text-primary capitalize">{words}</span>  <span className={page === 1 ? "hidden " : ""}>page <span className="text-primary">{page}</span></span></p>
                         {/* <p>{!(words[0] === '"' && words[words.length - 1] === '"') ? "You can also try a search for \""+words+'"' : ""}</p> */}
                     </div>
-                    <ContainerWords data={data} checkData={checkData}/>
+                    <WordsContainer data={data} checkData={checkData}/>
                     <button onClick={() => {setPage(parseInt(page) + 1)}} className={(data.length !== 0 ? "" : "hidden ") +"transition-colors mt-12 duration-300 mx-auto border-b-2 border-black dark:border-white hover:border-primary dark:hover:border-primary hover:text-primary hover:cursor-pointer"} >More Words</button>
                 </div>
             </div>

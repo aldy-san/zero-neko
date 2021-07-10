@@ -6,7 +6,7 @@ import SearchBox from './SearchBox'
 const BottomNav = () =>{
     const [searchShow, setSearchShow] = useState(false)
 
-    function handleSearchShow() {
+    const handleSearchShow = () => {
         if (searchShow) {
             setSearchShow(false);
         } else {
@@ -22,12 +22,12 @@ const BottomNav = () =>{
                             <path stroke="currentColor" d="M19.25 19.25L15.5 15.5M4.75 11C4.75 7.54822 7.54822 4.75 11 4.75C14.4518 4.75 17.25 7.54822 17.25 11C17.25 14.4518 14.4518 17.25 11 17.25C7.54822 17.25 4.75 14.4518 4.75 11Z"/>
                         </svg>
     return(
-        <nav className="fixed flex lg:hidden justify-center bottom-0 left-0 z-10 w-screen bg-white dark:bg-[#070d1a]">
+        <nav className="fixed flex lg:hidden justify-center bottom-0 left-0 z-10 w-screen bg-white dark:bg-[#070d1a] h-24">
             <div className="w-full mx-6 mt-8 mb-5">
                 <div className={(searchShow ? "flex" : "hidden")+" w-full"}>
                     <SearchBox/>
                 </div>
-                <ul className={(searchShow ? "hidden" : "flex")+" justify-between "}>
+                <ul className={(searchShow ? "hidden" : "flex")+" justify-between  py-2"}>
                 {
                     navLinks.map((nav, idx) => {
                         return  <BottomNavLink key={idx} title={nav.title} symbol={nav.symbol} path={nav.path}/>

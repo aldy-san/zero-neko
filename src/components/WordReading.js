@@ -11,7 +11,7 @@ const WordReading = (props) =>{
             {
                 props.word.split("").map((kana, idx) => {
                     if (isKanji(kana)) {
-                        return <Link key={idx} to={"/kanji/"+kana} className={isKanji(kana) ? "transition-all duration-150 border-dashed border-b-2 hover:text-6xl hover:border-primary hover:text-primary" : ""}>{kana}</Link>;
+                        return <Link key={idx} to={"/kanji/"+kana} className={isKanji(kana) ? "transition-all duration-150 border-dashed border-b-2 border-current hover:text-6xl hover:border-primary hover:text-primary" : ""}>{kana}</Link>;
                     }
                     return <span key={idx}>{kana}</span>;
                 })

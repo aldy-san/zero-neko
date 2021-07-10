@@ -10,8 +10,13 @@ export const socialMedia = [
         icon: ""
     },
     {
-        path: "https://www.discord.com",
+        path: "https://www.facebook.com",
+        title: "Facebook",
+        icon: ""
+    },
+    {
+        path: "https://discord.gg/JEKGHRKxzs",
         title: "Discord",
-        icon: "https://discord.gg/JEKGHRKxzs"
+        icon: ""
     }
 ]

@@ -8,7 +8,7 @@ const ChildFooter = (props) =>{
                 {
                     props.data.map((nav, index) => {
                         return <li className="transition-all delay-75 text-sm lg:text-base hover:text-primary py-1" key={index}>
-                                    <a className="" href={nav.path} >{nav.title}</a>
+                                    <a className="" href={nav.path} rel="noreferrer" target={props.targetBlank ? '"_blank" ' : ""}>{nav.title}</a>
                                 </li>
                     })
                 }

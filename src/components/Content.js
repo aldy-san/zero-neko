@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom'
 import logoIconWhite from '../assets/logo-icon-white.svg';
 import FallbackLoading from './FallbackLoading';
 
-function GetTitle() {
+const GetTitle = () => {
     const location = useLocation().pathname;
     let name = "404 Not Found";
     if (routes.find(o => o.path === location)) 
@@ -33,6 +33,7 @@ const Content = () => {
                             <FallbackLoading height="96" marginY="48"/>
                         </Route> */}
                         {routes.map((route, idx) => {
+                            console.log(route.exact);
                         return route.component && (
                             <Route
                             key={idx}

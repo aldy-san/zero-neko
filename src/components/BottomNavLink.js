@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import {NavLink} from 'react-router-dom';
 
 const BottomNavLink = (props) =>{
     const [Icon, setIcon] = useState();
@@ -21,8 +22,8 @@ const BottomNavLink = (props) =>{
         }
     }, [props])
     return(
-        <li className="block transition-all w-2/12 delay-150 hover:text-primary text-xl text-center font-thin dark:text-white " >
-            <a aria-label={props.title} href={props.path}>{Icon}</a>
+        <li className="block transition-all w-2/12 delay-150 text-xl text-center text-gray-400 dark:text-gray-400 focus:outline-none" >
+            <NavLink exact={props.path==='/'} aria-label={props.title} to={props.path} activeClassName="text-black dark:text-white">{Icon}</NavLink>
         </li>
     )
 }

@@ -1,8 +1,8 @@
 import React from 'react'
 import FallbackLoading from './FallbackLoading';
-const WordDetail = React.lazy(() => import('../components/WordDetail'));
+const WordDetail = React.lazy(() => import('./WordDetail'));
 
-const ContainerWords = (props) =>{
+const WordsContainer = (props) =>{
     if (props.data.length === 0) {
         if (props.checkData) {
             return <FallbackLoading height="96" span="Loading for words"/>
@@ -21,4 +21,4 @@ const ContainerWords = (props) =>{
     )
 }
 
-export default ContainerWords;
+export default WordsContainer;

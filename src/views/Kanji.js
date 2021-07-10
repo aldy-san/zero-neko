@@ -42,7 +42,7 @@ const Kanji = () => {
                             </svg>
                         </button>
                         {/* Modal */}
-                        <div className={(modal ? "flex" : "hidden")+" absolute top-14 rounded-lg w-40 bg-white shadow-lg dark:bg-gray-700 flex-col ml-auto px-2 py-3"}>
+                        <div className={(modal ? "flex" : "hidden")+" absolute top-14 rounded-lg w-40 bg-white shadow-lg dark:bg-gray-700 flex-col ml-auto px-2 py-3 z-10"}>
                             <div className="flex flex-col space-y-2">
                                 <RadioInput category="grade-1" checked={filter} onSend={(theFilter) => changeFilter(theFilter)}/>
                                 <RadioInput category="grade-2" checked={filter} onSend={(theFilter) => changeFilter(theFilter)}/>
