@@ -7,7 +7,7 @@ const WordReading = (props) =>{
         <>
         <p className={(props.word ? "text-xl" : "text-4xl font-semibold")+" my-auto text-center"}>{props.reading}</p>
         <p className={(props.word ? "" : "hidden ")+"text-5xl font-semibold my-auto text-center"}>
-            <span className="space-x-2">
+            <span className="space-x-2 whitespace-nowrap">
             {
                 props.word.split("").map((kana, idx) => {
                     if (isKanji(kana)) {

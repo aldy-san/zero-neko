@@ -7,7 +7,7 @@ const WordDetail = (props) =>{
         <div className="flex flex-col lg:flex-row pt-4 pb-8 border-b-2 border-gray-300 dark:border-gray-600 ">
             <div className="flex flex-col w-full mr-4">
                 <div className="flex-none space-y-2">
-                    <div className="flex flex-col space-y-3">
+                    <div className="flex flex-col space-y-6">
                         <WordReading reading={props.data.japanese[0].reading} word={props.data.japanese[0].word ? props.data.japanese[0].word : ""}/>
                     </div>
                     <div className="flex lg:flex-col gap-y-3 lg:gap-0 lg:space-y-3 py-2 justify-center flex-wrap sp">
