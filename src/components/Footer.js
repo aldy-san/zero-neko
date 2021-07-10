@@ -33,7 +33,7 @@ const Footer = () => {
                 </span>
                 <span className="lg:ml-auto">
                     <span>Powered by </span>
-                    <a className="hover:text-primary border-dashed border-b-2 border-gray-900 dark:border-gray-50 hover:border-primary dark:hover:border-primary" href="https://kanjiapi.dev/" target="_blank" rel="noreferrer">kanjiapi.dev </a> 
+                    <a className="hover:text-primary border-dashed border-b-2 border-gray-900 dark:border-gray-50 hover:border-primary dark:hover:border-primary" href="https://kanjiapi.dev/" target="_blank" rel="noreferrer">kanjiapi.dev</a> 
                     <span> and </span>
                     <a className="hover:text-primary border-dashed border-b-2 border-gray-900 dark:border-gray-50 hover:border-primary dark:hover:border-primary" href="https://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api" target="_blank" rel="noreferrer">Jisho API</a>
                 </span>
