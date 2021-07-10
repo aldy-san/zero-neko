@@ -14,7 +14,7 @@ import ChildFooter from './ChildFooter';
 const Footer = () => {
     const { theme } = React.useContext(ThemeContext)
     return(
-        <div className="flex flex-col bg-gray-100 dark:bg-gray-900 dark:text-white pt-8 pb-4 ">
+        <footer className="flex flex-col bg-gray-100 dark:bg-gray-900 dark:text-white pt-8 pb-4 ">
             <div className="grid grid-cols-12 mx-8 lg:mx-32">
                 <div className="col-span-12 lg:col-span-3 mb-4 lg:mb-8">
                     <img className="mx-auto mb-5 w-20 lg:w-24" src={(theme !== "dark" ? logoIcon : logoIconWhite)} alt="logo-full" height="0" width="0"/>
@@ -38,7 +38,7 @@ const Footer = () => {
                     <a className="hover:text-primary border-dashed border-b-2 border-gray-900 dark:border-gray-50 hover:border-primary dark:hover:border-primary" href="https://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api" target="_blank" rel="noreferrer">Jisho API</a>
                 </span>
             </div>
-        </div>
+        </footer>
     )
 }
 
