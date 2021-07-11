@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import illus from '../assets/illus.svg';
 import searchIllus from '../assets/searchIllus.svg';
 import {Fade} from 'react-reveal';
 import { Link } from 'react-router-dom';
 const Home = () => {
+    useEffect(() => {
+        window.scrollTo(0,0)
+    }, [])
     return(
         <div className="mx-8 lg:mx-32 lg:mr-52">
             <Fade bottom>
@@ -27,10 +30,11 @@ const Home = () => {
                         <div className="mx-auto text-lg my-auto  space-y-4">
                             <p>Here a few example to search words or kanji.</p>
                             <ul className="list-disc list-inside  space-y-1">
-                                <li>Search by English: <Link className="border-dashed border-b-2 hover:text-primary hover:border-primary" to="/search?words=food">food</Link></li>
-                                <li>Search by Kana: <Link className="border-dashed border-b-2 hover:text-primary hover:border-primary" to="/search?words=あお">あお</Link></li>
-                                <li>Search by Kanji: <Link className="border-dashed border-b-2 hover:text-primary hover:border-primary" to="/search?words=犬">犬</Link></li>
-                                <li>Search by Tag: <Link className="border-dashed border-b-2 hover:text-primary hover:border-primary" to="/search?words=%23jlpt-n3 %23adjective">#jlpt-n3 #adjective</Link></li>
+                                <li>Search by English: <Link className="border-dashed border-b-2 border-current hover:text-primary hover:border-primary" to='/search?words="food"'>"food"</Link></li>
+                                <li>Search by Romaji: <Link className="border-dashed border-b-2 border-current hover:text-primary hover:border-primary" to="/search?words=ai">ai</Link></li>
+                                <li>Search by Kana: <Link className="border-dashed border-b-2 border-current hover:text-primary hover:border-primary" to="/search?words=あお">あお</Link></li>
+                                <li>Search by Kanji: <Link className="border-dashed border-b-2 border-current hover:text-primary hover:border-primary" to="/search?words=犬">犬</Link></li>
+                                <li>Search by Tag: <Link className="border-dashed border-b-2 border-current hover:text-primary hover:border-primary" to="/search?words=%23jlpt-n3 %23adjective">#jlpt-n3 #adjective</Link></li>
                             </ul>
                         </div>
                     </div>

@@ -16,7 +16,8 @@ const Kanji = () => {
                 if (response.data.length === 0) {
                     setCheckData(false);
                 }
-                setKanjiList(response.data)
+                setKanjiList(response.data);
+                window.scrollTo(0,0)
             })
         }
         fetchData()

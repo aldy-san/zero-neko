@@ -16,7 +16,7 @@ const WordTag = (props) =>{
         }
     }, [props.data])
     return(
-        <p className={((data === "" || !data) ? "hidden " : "")+"text-center text-xs rounded-lg py-1 px-3 lg:py-2 mx-auto " + ((props.color === "gray") ? "bg-gray-300 dark:bg-gray-600" : "bg-green-300 dark:bg-green-600")}>{data}</p>
+        <p className={((data === "" || !data) ? "hidden " : "")+"text-center text-xs rounded-lg py-1 px-3 lg:py-2 mx-2 lg:mx-auto " + ((props.color === "gray") ? "bg-gray-300 dark:bg-gray-600" : "bg-green-300 dark:bg-green-600")}>{data}</p>
     )
 }
 

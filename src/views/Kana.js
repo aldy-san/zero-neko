@@ -13,6 +13,7 @@ const Kana = (props) => {
         } else if (props.title === "Katakana"){
             setKana(katakana);
         }
+        window.scrollTo(0,0)
     }, [props.title])
     return(
         <div className="text-center lg:mx-36">

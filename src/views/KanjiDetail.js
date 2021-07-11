@@ -18,7 +18,6 @@ const KanjiDetail = () => {
             axios.get('https://kanjiapi.dev/v1/kanji/'+kanji)
             .then(response => {
                 setKanjiDetail(response.data)
-                console.log("hai");
                 window.scrollTo(0, 0)
             })
         }

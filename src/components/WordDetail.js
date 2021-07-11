@@ -1,16 +1,23 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import WordTag from './WordTag'
 import WordReading from '../components/WordReading'
 
 const WordDetail = (props) =>{
+    const [wordLength, setWordLength] = useState(0)
+    useEffect(() => {
+        console.log(props.data.japanese[0]);
+        if(props.data.japanese[0].word){
+            setWordLength(props.data.japanese[0].word.length)
+        }
+    }, [props])
     return(
-        <div className={(props.data.japanese[0].word.length > 5 ? "lg:flex-col lg:ml-4" : "lg:flex-row")+" flex flex-col pt-4 pb-8 border-b-2 border-gray-300 dark:border-gray-600 "}>
+        <div className={(wordLength > 5 ? "lg:flex-col lg:ml-4" : "lg:flex-row")+" flex flex-col pt-4 pb-8 border-b-2 border-gray-300 dark:border-gray-600 "}>
             <div className="flex flex-col w-full mr-4">
                 <div className="flex flex-col flex-none space-y-2">
                     <div className="flex flex-col space-y-6">
                         <WordReading reading={props.data.japanese[0].reading} word={props.data.japanese[0].word ? props.data.japanese[0].word : ""}/>
                     </div>
-                    <div className={(props.data.japanese[0].word.length > 5 ? "lg:flex-row lg:justify-start lg:-ml-3 lg:-mt-4 lg:space-x-2" : "lg:flex-col lg:space-y-3")+" flex gap-y-3 lg:gap-0 py-2 justify-center flex-wrap"}>
+                    <div className={(wordLength > 5 ? "lg:flex-row lg:justify-start lg:-ml-3 lg:-mt-4 lg:space-x-2" : "lg:flex-col lg:space-y-3")+" flex gap-y-3 lg:gap-0 py-2 justify-center flex-wrap"}>
                         <WordTag data={props.data.is_common} color={"green"}/>
                         {
                             props.data.tags.map((tags,idx) => {
@@ -25,7 +32,7 @@ const WordDetail = (props) =>{
                     </div>
                 </div>
             </div>
-            <div className="flex flex-col flex-none w-9/12 space-y-2">
+            <div className="flex flex-col flex-none w-9/12 space-y-2 mt-4 lg:mt-0">
                 <div className="flex flex-col space-y-4">
                     {
                         props.data.senses.map((sense,idx) => {
