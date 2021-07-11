@@ -1,8 +1,8 @@
 import { useLocation } from "react-router-dom";
 import React, {useEffect, useState} from 'react';
+import {Helmet, HelmetProvider} from 'react-helmet-async'
 import H1 from '../components/H1'
 import WordsContainer from "../components/WordsContainer";
-import {Helmet, HelmetProvider} from 'react-helmet-async'
 
 const Search = () => {
     const location = useLocation();
@@ -19,7 +19,7 @@ const Search = () => {
             const wordParams = searchParams.get('words');
             setWords(wordParams);
             const proxy = 'https://zeroneko-corsproxy.herokuapp.com/'
-            const url = proxy + 'http://jisho.org/api/v1/search/words?keyword=' + wordParams + (page ? '&page=' + page : "");
+            const url = proxy + 'http://jisho.org/api/v1/search/words?keyword=' + encodeURIComponent(wordParams) + (page ? '&page=' + page : "");
             const response = await fetch(url);
             const json = await response.json();
             if (json.data.length === 0) {

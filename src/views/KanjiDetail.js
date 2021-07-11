@@ -1,10 +1,10 @@
-import axios from 'axios';
-import { isKanji } from 'nihongo/src/analysers';
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import {Helmet, HelmetProvider} from 'react-helmet-async'
 import { Redirect, useLocation } from 'react-router-dom'
+import { isKanji } from 'nihongo/src/analysers';
 import KanjiListDetail from '../components/KanjiListDetail';
 import KanjiWordContainer from '../components/KanjiWordContainer';
-import {Helmet, HelmetProvider} from 'react-helmet-async'
 
 const KanjiDetail = () => {
     const location = useLocation().pathname;

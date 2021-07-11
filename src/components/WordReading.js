@@ -5,9 +5,9 @@ import { isKanji, toRomaji } from 'wanakana'
 const WordReading = (props) =>{
     return(
         <>
-        <p className={(props.word ? "text-xl" : "text-4xl font-semibold")+" my-auto text-center"}>{props.reading}</p>
-        <p className={(props.word ? "" : "hidden ")+"text-5xl font-semibold my-auto text-center"}>
-            <span className="space-x-2 whitespace-nowrap">
+        <p className={(props.word ? "text-xl" : "text-4xl font-semibold")+" my-auto text-center"+(props.word.length > 5 ? " lg:text-left" : "")}>{props.reading}</p>
+        <p className={(props.word ? "" : "hidden ")+"text-5xl font-semibold my-auto text-center"+(props.word.length > 5 ? " lg:text-left" : "")}>
+            <span className="space-x-2 lg:whitespace-nowrap">
             {
                 props.word.split("").map((kana, idx) => {
                     if (isKanji(kana)) {
@@ -18,7 +18,7 @@ const WordReading = (props) =>{
             }
             </span>
         </p>
-        <p className="text-xl my-auto text-center capitalize">{toRomaji(props.reading)}</p>
+        <p className={"text-xl my-auto text-center capitalize"+(props.word.length > 5 ? " lg:text-left" : "")}>{toRomaji(props.reading)}</p>
         </>
     )
 }

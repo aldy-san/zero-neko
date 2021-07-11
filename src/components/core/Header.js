@@ -23,7 +23,7 @@ const Header = () => {
                 <ul className="flex-row hidden xl:flex space-x-5 my-5 lg:py-3 mr-10">
                 {
                     navLinks.map((nav, index) => {
-                        return <li className="transition-all delay-150 text-gray-500  dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 font-semibold text-lg tracking-wider" key={index} >
+                        return <li className="transition-all delay-150 text-gray-500  dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 font-semibold text-lg tracking-wider" key={index} >
                                     <NavLink exact={nav.path==='/'} to={nav.path} activeClassName="text-black dark:text-white">{nav.title}</NavLink>
                                 </li>
                     })

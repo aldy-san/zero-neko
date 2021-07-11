@@ -29,11 +29,7 @@ const Content = () => {
             <main className="relative m-0 bg-gray-50 dark:bg-gray-800 dark:text-gray-100 pt-8 pb-16">
                 <Suspense fallback={<FallbackLoading height="96" marginY="48"/>}>
                     <Switch>
-                        {/* <Route path="/loading">
-                            <FallbackLoading height="96" marginY="48"/>
-                        </Route> */}
                         {routes.map((route, idx) => {
-                            console.log(route.exact);
                         return route.component && (
                             <Route
                             key={idx}

@@ -1,18 +1,22 @@
 import React, {useState, useEffect} from 'react'
 
 const WordTag = (props) =>{
-    const [data, setdata] = useState("");
+    const [data, setData] = useState("");
     useEffect(() => {
-        if (typeof(props.data) != "boolean") {
-            setdata(props.data);
+        if (props.data === true) {
+            setData("Common Word");
         } else {
-            if (props.data === true) {
-                setdata("Common Word")
-            } 
+            if (props.data ? props.data.slice(0,5) === "jlpt-": "") {
+                setData("JLPT N"+props.data.slice(6,7));
+            } else if (props.data ? props.data.slice(0,8) === "wanikani": ""){
+                setData("Wanikani Level "+props.data.slice(8,9))
+            } else{
+                setData(props.data)
+            }
         }
     }, [props.data])
     return(
-        <p className={((data === "" || !data) ? "hidden " : "")+"text-center text-xs  rounded-lg mx-2 md:mx-16 p-1 lg:py-2 " + ((props.color === "gray") ? "bg-gray-300 dark:bg-gray-600 uppercase" : "bg-green-300 dark:bg-green-600")}>{data}</p>
+        <p className={((data === "" || !data) ? "hidden " : "")+"text-center text-xs rounded-lg py-1 px-3 lg:py-2 mx-auto " + ((props.color === "gray") ? "bg-gray-300 dark:bg-gray-600" : "bg-green-300 dark:bg-green-600")}>{data}</p>
     )
 }
 
