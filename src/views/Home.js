@@ -8,7 +8,7 @@ const Home = () => {
         window.scrollTo(0,0)
     }, [])
     return(
-        <div className="mx-8 lg:mx-32 lg:mr-52">
+        <div className="mx-1 lg:mx-32 lg:mr-52">
             <Fade bottom>
                 <section className="flex flex-col lg:flex-row lg:mt-12 p-2 lg:p-8 rounded-lg">
                         <div className="flex mx-auto mb-6 lg:mb-0 lg:order-last w-11/12 lg:w-2/5">

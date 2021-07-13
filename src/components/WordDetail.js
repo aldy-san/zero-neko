@@ -32,12 +32,12 @@ const WordDetail = (props) =>{
                     </div>
                 </div>
             </div>
-            <div className="flex flex-col flex-none w-9/12 space-y-2 mt-4 lg:mt-0">
+            <div className="flex flex-col flex-none lg:w-9/12 space-y-2 mt-4 lg:mt-0">
                 <div className="flex flex-col space-y-4">
                     {
                         props.data.senses.map((sense,idx) => {
                             return (
-                            <div key={idx} className="flex flex-col">
+                            <div key={idx} className="flex flex-col space-y-2">
                                 <p className="text-gray-600 dark:text-gray-400 text-sm capitalize">{sense.parts_of_speech.join(", ")}</p>
                                 <p className="text-xl">
                                     <span className="text-gray-600 dark:text-gray-300">{(idx+1)}. </span>
