@@ -25,6 +25,8 @@ module.exports = {
   variants: {
     extend: {
       boxShadow: ['active','responsive', 'hover', 'dark'],
+      gridColumn: ['responsive', 'hover'],
+      gridColumnStart: ['responsive', 'hover'],
     },
   },
   plugins: [],

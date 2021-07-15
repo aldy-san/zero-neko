@@ -3,7 +3,7 @@ import Toggle from '../Toggle';
 import { ThemeContext } from './themeContext';
 import { navLinks } from '../../data/navLinks';
 import SearchBox from '../SearchBox';
-import {NavLink} from 'react-router-dom';
+import NavLinks from './NavLinks';
 
 import logo from '../../assets/logo-full.svg';
 import logoWhite from '../../assets/logo-full-white.svg';
@@ -22,10 +22,8 @@ const Header = () => {
                 </div>
                 <ul className="flex-row hidden xl:flex space-x-5 my-5 lg:py-3 mr-10">
                 {
-                    navLinks.map((nav, index) => {
-                        return <li className="transition-all delay-150 text-gray-500  dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 font-semibold text-lg tracking-wider" key={index} >
-                                    <NavLink exact={nav.path==='/'} to={nav.path} activeClassName="text-black dark:text-white">{nav.title}</NavLink>
-                                </li>
+                    navLinks.map((nav, idx) => {
+                        return <NavLinks key={idx} nav={nav}/>
                     })
                 }
                 </ul>

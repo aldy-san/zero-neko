@@ -11,7 +11,11 @@ const SearchBox = () =>{
     };
     return(
         <div className="transition-all duration-200 flex rounded-full text-gray-700  dark:text-gray-200 bg-gray-100 dark:bg-gray-900 focus-within:ring-2 focus-within:ring-primary w-full xl:w-96">
-            <input autoComplete="off" onKeyDown={handleKeypress} onChange={(e) => setSearch(e.target.value)} className="bg-transparent outline-none px-6 w-full" type="search" name="words" id="words" placeholder="English, Japanese, Kanji, Words" />
+            <input 
+            autoComplete="off" 
+            onKeyDown={handleKeypress} 
+            onChange={(e) => setSearch(e.target.value)} 
+            className="bg-transparent outline-none px-6 w-full focus:placeholder-gray-500" type="search" name="words" id="words" placeholder="English, Japanese, Kanji, Words" />
             <Link ref={node => (btn = node)} to={search === "" ? "" : "/search?words="+encodeURIComponent(search)} className="transition-color duration-150 p-3 ml-auto  rounded-r-full bg-gray-200 dark:bg-[#192130] dark:border-gray-500 hover:text-white hover:bg-primary dark:hover:bg-primary ">
                 <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" d="M19.25 19.25L15.5 15.5M4.75 11C4.75 7.54822 7.54822 4.75 11 4.75C14.4518 4.75 17.25 7.54822 17.25 11C17.25 14.4518 14.4518 17.25 11 17.25C7.54822 17.25 4.75 14.4518 4.75 11Z"/>

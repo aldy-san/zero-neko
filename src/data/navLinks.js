@@ -22,6 +22,7 @@ export const navLinks = [
     {
         path:'/game',
         symbol:'game',
-        title: "Game"
+        title: "Game",
+        type:'dropdown'
     }
 ]

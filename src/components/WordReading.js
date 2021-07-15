@@ -6,7 +6,7 @@ const WordReading = (props) =>{
     return(
         <>
         <p className={(props.word ? "text-xl" : "text-4xl font-semibold")+" my-auto text-center"+(props.word.length > 5 ? " lg:text-left" : "")}>{props.reading}</p>
-        <p className={(props.word ? "" : "hidden ")+"text-5xl font-semibold my-auto text-center"+(props.word.length > 5 ? " lg:text-left" : "")}>
+        <p className={(props.word ? "" : "hidden ")+"text-3xl font-semibold my-auto text-center"+(props.word.length > 5 ? " lg:text-left" : "")}>
             <span className="flex flex-wrap lg:flex-nowrap gap-y-6 gap-x-2 justify-center">
             {
                 props.word.split("").map((kana, idx) => {
@@ -18,7 +18,7 @@ const WordReading = (props) =>{
             }
             </span>
         </p>
-        <p className={"text-xl my-auto text-center capitalize"+(props.word.length > 5 ? " lg:text-left" : "")}>{toRomaji(props.reading)}</p>
+        <p className={"text-lg my-auto text-center capitalize"+(props.word.length > 5 ? " lg:text-left" : "")}>{toRomaji(props.reading)}</p>
         </>
     )
 }
