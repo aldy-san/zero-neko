@@ -136,7 +136,7 @@ export const hiragana = [
     },
     {
       kana: "ふ",
-      romaji: "hu",
+      romaji: "fu",
       type: "gojuuon"
     },
     {

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import {Helmet, HelmetProvider} from 'react-helmet-async'
 import { Redirect, useLocation } from 'react-router-dom'
 import { isKanji } from 'nihongo/src/analysers';
 import KanjiListDetail from '../components/KanjiListDetail';
@@ -31,11 +30,6 @@ const KanjiDetail = () => {
     }
     return(
         <>
-        <HelmetProvider>
-            <Helmet>
-                <title>{"Kanji - "+ kanji + " - Zeroneko"}</title>
-            </Helmet>
-        </HelmetProvider>
         <div className="flex flex-col mx-[20px] lg:mx-[160px] xl:mx-[240px]">
             <div className="flex flex-col lg:flex-row lg:mb-0 lg:space-x-20">
                 <div className="flex flex-col mx-auto text-center mr-auto mb-8">

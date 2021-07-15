@@ -9,10 +9,12 @@ import logoIconWhite from '../../assets/logo-icon-white.svg';
 const GetTitle = () => {
     const location = useLocation().pathname;
     let name = "404 Not Found";
-    if (routes.find(o => o.path === location)) 
+    console.log(location.split("/"));
+    console.log("hai");
+    if (routes.find(o => o.path === location))
         name = routes.find(o => o.path === location).name;
-    else if(location.split("/")[1] === "search"){
-        name = location.split("/")[2]
+    else if (location.split("/")[1] === "kanji"){
+        name = "Kanji - "+location.split("/")[2]
     }
     return name;
 }

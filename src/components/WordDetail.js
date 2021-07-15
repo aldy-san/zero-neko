@@ -5,7 +5,6 @@ import WordReading from '../components/WordReading'
 const WordDetail = (props) =>{
     const [wordLength, setWordLength] = useState(0)
     useEffect(() => {
-        console.log(props.data.japanese[0]);
         if(props.data.japanese[0].word){
             setWordLength(props.data.japanese[0].word.length)
         }

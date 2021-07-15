@@ -136,7 +136,7 @@ export const katakana = [
     },
     {
       kana: "フ",
-      romaji: "hu",
+      romaji: "fu",
       type: "gojuuon"
     },
     {

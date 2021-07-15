@@ -17,7 +17,10 @@ const Search = () => {
             setCheckData(true);
             const searchParams = new URLSearchParams(location.search);
             const wordParams = searchParams.get('words');
-            setWords(wordParams);
+            if (words !== wordParams) {
+                setPage(1);
+                setWords(wordParams);
+            }
             const proxy = 'https://zeroneko-corsproxy.herokuapp.com/'
             const url = proxy + 'http://jisho.org/api/v1/search/words?keyword=' + encodeURIComponent(wordParams) + (page ? '&page=' + page : "");
             const response = await fetch(url);
@@ -29,7 +32,7 @@ const Search = () => {
             window.scrollTo(0, 0)
         }
         fetchData();
-    },[page, location])
+    },[page, location, words])
 
     return(
         <>
@@ -47,7 +50,7 @@ const Search = () => {
                         {/* <p>{!(words[0] === '"' && words[words.length - 1] === '"') ? "You can also try a search for \""+words+'"' : ""}</p> */}
                     </div>
                     <WordsContainer data={data} checkData={checkData}/>
-                    <button onClick={() => {setPage(parseInt(page) + 1)}} className={(data.length !== 0 ? "" : "hidden ") +"transition-colors mt-12 duration-300 mx-auto border-b-2 border-black dark:border-white hover:border-primary dark:hover:border-primary hover:text-primary hover:cursor-pointer"} >More Words</button>
+                    <button onClick={() => {setPage(parseInt(page) + 1)}} className={(data.length < 7 ? "hidden " : "") +"transition-colors mt-12 duration-300 mx-auto border-b-2 border-black dark:border-white hover:border-primary dark:hover:border-primary hover:text-primary hover:cursor-pointer"} >More Words</button>
                 </div>
             </div>
         </div>
