@@ -15,7 +15,6 @@ const KanjiBox = (props) =>{
                 setKanji(response.data);
             })
         }
-        // setTimeout(fetchData, 3000)
         fetchData()
     },[props.data]);
     let n = 8;

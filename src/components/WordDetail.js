@@ -10,11 +10,13 @@ const WordDetail = (props) =>{
         }
     }, [props])
     return(
-        <div className={(wordLength > 5 ? "lg:flex-col lg:ml-4" : "lg:flex-row")+" flex flex-col pt-4 pb-8 border-b-2 border-gray-300 dark:border-gray-600 "}>
+        <div className={(wordLength > 5 ? "lg:flex-col md:pl-8 lg:pl-10" : "lg:flex-row")+" flex flex-col pt-4 pb-8 border-b-2 border-gray-300 dark:border-gray-600 "}>
             <div className="flex flex-col w-full mr-4">
                 <div className="flex flex-col flex-none space-y-2">
                     <div className="flex flex-col space-y-6">
-                        <WordReading reading={props.data.japanese[0].reading} word={props.data.japanese[0].word ? props.data.japanese[0].word : ""}/>
+                        <WordReading 
+                        reading={props.data.japanese[0].reading} 
+                        word={props.data.japanese[0].word && props.data.japanese[0].word }/>
                     </div>
                     <div className={(wordLength > 5 ? "lg:flex-row lg:justify-start lg:-ml-3 lg:-mt-4 lg:space-x-2" : "lg:flex-col lg:space-y-3")+" flex gap-y-3 lg:gap-0 py-2 justify-center flex-wrap"}>
                         <WordTag data={props.data.is_common} color={"green"}/>
