@@ -45,7 +45,7 @@ const Search = () => {
             <div className="flex flex-col lg:flex-row">
                 <div className="flex flex-col w-full">
                     <div className=" w-full">
-                        <H1 span={"言"} text={"Words"}></H1>
+                        <H1 span={"語"} text={"Words"}></H1>
                         <p className="text-center">Searched for <span className="text-primary capitalize">{words}</span>  <span className={page === 1 ? "hidden " : ""}>page <span className="text-primary">{page}</span></span></p>
                         {/* <p>{!(words[0] === '"' && words[words.length - 1] === '"') ? "You can also try a search for \""+words+'"' : ""}</p> */}
                     </div>
