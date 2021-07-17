@@ -6,12 +6,12 @@ import { Link } from 'react-router-dom'
 const KanjiWordsList = (props) =>{
     return(
         <div className="flex flex-col lg:flex-row border-b border-gray-400 py-4 space-y-4 lg:space-y-0">
-            <p className="whitespace-nowrap text-2xl lg:text-4xl my-auto mr-auto font-semibold">
-                <span className="space-x-2">
+            <p className="text-2xl lg:text-4xl my-auto mr-auto font-semibold">
+                <span className="flex flex-wrap gap-2">
                     {
                         props.datas.variants[0].written.split("").map((kana, idx) => {
                             if (isKanji(kana)) {
-                                return <Link key={idx} to={"/kanji/"+kana} className={isKanji(kana) ? "transition-all duration-150 border-dashed border-b-2 border-current hover:border-primary hover:text-5xl hover:text-primary" : ""}>{kana}</Link>;
+                                return <Link key={idx} to={"/kanji/"+kana} className={isKanji(kana) ? "transition-all duration-150 border-dashed border-b-2 border-current hover:border-primary hover:text-3xl lg:hover:text-5xl hover:text-primary" : ""}>{kana}</Link>;
                             }
                             return <span key={idx}>{kana}</span>;
                         })

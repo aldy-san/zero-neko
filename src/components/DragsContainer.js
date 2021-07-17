@@ -24,7 +24,13 @@ return(
         <ul className="flex flex-wrap justify-center grid-flow-col mx-auto gap-1">
             {
                 data.map((kana, idx) => {
-                    return <DragBox key={idx} kana={kana} dragItem={props.dragItem} category={props.category} correct={containsObject(kana, props.correct)} onSetDragItem={(a) => props.onSetDragItem(a)}/>
+                    return <DragBox 
+                            key={idx} 
+                            kana={kana} 
+                            dragItem={props.dragItem} 
+                            category={props.category} 
+                            correct={containsObject(kana, props.correct)} 
+                            onSetDragItem={(a) => props.onSetDragItem(a)}/>
                 })
             }
         </ul>

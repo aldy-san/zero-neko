@@ -25,13 +25,15 @@ const DropBox = (props) =>{
         // e.dataTransfer.setData(props.kana, e.target.id);
     }
     return(
-        <li className="box-border flex text-center text-2xl lg:text-4xl font-bold w-12 lg:w-16 h-12 lg:h-16 hover:text-red-300 ">
+        <li 
+            draggable
+            onClick={() => props.onSetDragItem(props.kana)}
+            onDragStart={(e) => onDragStart(e)}
+            onDragEnd={(e) => onDragEnd(e)} 
+            className="box-border flex text-center text-2xl lg:text-4xl font-bold w-12 lg:w-16 h-12 lg:h-16 hover:text-red-300 cursor-pointer">
             <span id={props.kana}
-                draggable
-                onClick={() => props.onSetDragItem(props.kana)}
-                onDragStart={(e) => onDragStart(e)}
-                onDragEnd={(e) => onDragEnd(e)} 
-                className={(props.dragItem === props.kana ? "text-primary" : "")+" border-b-2 border-current m-auto cursor-pointer"} >
+                
+                className={(props.dragItem === props.kana ? "text-primary" : "")+" border-b-2 border-current m-auto "} >
                 {!props.correct ? (show ? kana : "") :""}
             </span>
         </li>

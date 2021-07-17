@@ -11,7 +11,7 @@ const DnDGame = () => {
     const [to, setTo] = useState("Romaji")
     const [game, setGame] = useState(false)
     const [correct, setCorrect] = useState([])
-    // const [time, setTime] = useState(0)
+    const [time, setTime] = useState(0)
     const onDrop = (item) => {
         console.log("dragItem");
         console.log(dragItem);
@@ -26,13 +26,32 @@ const DnDGame = () => {
         }
     }
     useEffect(() => {
-    }, [correct])
+        const interval = setInterval(() => {
+            game && setTime(t => t + 1);
+        }, 1000);
+
+        return () => {
+            clearInterval(interval);
+        };
+    }, [game])
+
+    const convertTime = (num) => {
+        let res = "";
+
+        let minutes = (Math.floor(num / 60));
+        let sec = (num % 60);
+        minutes = minutes < 10 ? "0"+minutes : minutes
+        sec = sec < 10 ? "0"+sec : sec
+        res = minutes + " : " + sec;
+        console.log(num);
+        return res;
+    }
 
     return(
         <div className="flex flex-col lg:mx-20 py-4 lg:p-4">
-            <h1 className="text-3xl lg:text-5xl font-bold text-center">Pairing Kana</h1>
+            <h1 className="text-3xl lg:text-4xl font-bold text-center">Pairing Kana</h1>
             <div className={(game ? "hidden" : "flex") + " rounded-xl  border-gray-800 dark:border-gray-500 py-12 flex-col mx-auto"}>
-                <span className="text-xl lg:text-4xl text-center font-black mb-3">Setting</span>
+                <span className="text-xl lg:text-3xl text-center font-black mb-3">Setting</span>
                 <div className="flex space-x-8 py-3 lg:p-8">
                     <div className="flex flex-col space-y-4">
                         <H2 text="From"/>
@@ -62,7 +81,7 @@ const DnDGame = () => {
             </div>
             <div className={(game ? "flex" : "hidden") + " flex-col space-y-8 px-4 py-8 rounded-md select-none mt-4"}>
                 <div className="flex lg:mx-6">
-                    <button onClick={() => {setGame(false)}} className="transtion duration-150 space-x-2 bg-gray-200 dark:bg-gray-700 dark:hover:bg-primary hover:bg-primary hover:text-white px-5 py-2 lg:px-7 lg:py-3 rounded-full text-base flex">
+                    <button onClick={() => {setGame(false); setTime(0);}} className="transtion duration-150 space-x-2 mr-2 bg-gray-200 dark:bg-gray-700 dark:hover:bg-primary hover:bg-primary hover:text-white px-5 py-2 lg:px-7 lg:py-3 rounded-full text-base flex">
                         <div className="my-auto">
                             <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" d="M10.25 6.75L4.75 12L10.25 17.25"></path>
@@ -71,14 +90,17 @@ const DnDGame = () => {
                         </div>
                         <span className="my-auto">Back</span>
                     </button>
-                    <div className="flex space-x-2 bg-green-200 dark:bg-green-700 px-5 py-2 lg:px-7 lg:py-3 rounded-full  lg:text-lg ml-auto">
+                    <button onClick={() => {setTime(0); setCorrect([])}} className="transtion duration-150 space-x-2 bg-gray-200 dark:bg-gray-700 dark:hover:bg-indigo-600 hover:bg-indigo-400 hover:text-white px-5 py-2 lg:px-7 lg:py-3 rounded-full text-base flex">
+                        <span className="my-auto">Reset</span>
+                    </button>
+                    <div className="flex space-x-2 bg-green-200 dark:bg-green-600 px-5 py-2 lg:px-7 lg:py-3 rounded-full  lg:text-lg ml-auto">
                         <div className="my-auto">
                             <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <circle cx="12" cy="12" r="7.25" stroke="currentColor" ></circle>
                                 <path stroke="currentColor"  d="M12 8V12L14 14"></path>
                             </svg>
                         </div>
-                        <span className="my-auto">00:00</span>
+                        <span className="my-auto">{convertTime(time)}</span>
                     </div>
                 </div>
                 <div className="flex flex-col space-y-8 lg:mx-6">
