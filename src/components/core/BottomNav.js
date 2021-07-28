@@ -35,7 +35,7 @@ const BottomNav = () =>{
                 }
                 </ul>
             </div>
-            <button onClick={handleSearchShow} className="absolute -top-9 bg-gray-50 shadow-md dark:bg-[#192236] rounded-full p-4 dark:text-white">
+            <button aria-label="Search" onClick={handleSearchShow} className="absolute -top-9 bg-gray-50 shadow-md dark:bg-[#192236] rounded-full p-4 dark:text-white">
                 {(searchShow ? iconClose : iconSearch)}
             </button>
         </nav>

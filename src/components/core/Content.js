@@ -1,10 +1,11 @@
 import React, { Suspense } from 'react';
-import { Route, Switch } from "react-router-dom";
+import { Switch } from "react-router-dom";
 import routes from '../../routes'
 import {Helmet, HelmetProvider} from 'react-helmet-async'
 import { useLocation } from 'react-router-dom'
 import FallbackLoading from '../FallbackLoading';
 import logoIconWhite from '../../assets/logo-icon-white.svg';
+import FancyRoute from './FancyRoute';
 
 const GetTitle = () => {
     const location = useLocation().pathname;
@@ -34,14 +35,13 @@ const Content = () => {
                     <Switch>
                         {routes.map((route, idx) => {
                         return route.component && (
-                            <Route
+                            <FancyRoute
                             key={idx}
                             path={route.path}
                             exact={route.exact}
                             name={route.name}
-                            render={props => (
-                                <route.component {...props} symbol={route.symbol} title={route.name} />
-                            )} />
+                            render={props => (<route.component {...props} symbol={route.symbol} title={route.name} />)} 
+                            />
                         )
                         })}
                     </Switch>
