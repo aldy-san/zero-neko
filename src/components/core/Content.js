@@ -13,9 +13,9 @@ const GetTitle = () => {
     if (routes.find(o => o.path === location)){
         name = routes.find(o => o.path === location).name;
     } else if (location.split("/")[1] === "game"){
-        name = routes.find(o => o.path === location).name
+        name = routes.find(o => o.path === location) ? routes.find(o => o.path === location).name : "404 Not Found";
     } else if (location.split("/")[1] === "kanji"){
-        name = "Kanji - "+location.split("/")[2]
+        name = "Kanji - "+location.split("/")[2];
     }
     
     return name;

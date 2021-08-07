@@ -12,6 +12,7 @@ const DnDGame = () => {
     const [game, setGame] = useState(false)
     const [correct, setCorrect] = useState([])
     const [time, setTime] = useState(0)
+    const [timeCount, setTimeCount] = useState(false)
     const onDrop = (item) => {
         console.log("dragItem");
         console.log(dragItem);
@@ -27,23 +28,24 @@ const DnDGame = () => {
     }
     useEffect(() => {
         const interval = setInterval(() => {
-            game && setTime(t => t + 1);
+            timeCount && setTime(t => t + 1);
         }, 1000);
+        if (kana.length === correct.length) {
+            setTimeCount(false);
+        }
 
         return () => {
             clearInterval(interval);
         };
-    }, [game])
+    }, [timeCount, correct])
 
     const convertTime = (num) => {
         let res = "";
-
         let minutes = (Math.floor(num / 60));
         let sec = (num % 60);
         minutes = minutes < 10 ? "0"+minutes : minutes
         sec = sec < 10 ? "0"+sec : sec
         res = minutes + " : " + sec;
-        console.log(num);
         return res;
     }
 
@@ -67,7 +69,7 @@ const DnDGame = () => {
                     </div>
                 </div>
                 <div className="flex">
-                    <button onClick={() =>{ setGame(true); setCorrect([])}} 
+                    <button onClick={() =>{ setGame(true); setCorrect([]); setTimeCount(true)}} 
                     className="flex transition-all delay-75 px-6 py-4 lg:px-8 mt-4 rounded-full mx-auto  bg-gray-300 text-gray-600 dark:text-gray-100 dark:hover:text-white hover:bg-primary hover:text-white dark:bg-gray-700 dark:bg-opacity-80 dark:hover:bg-primary text-lg lg:text-3xl">
                         <span className="mr-2">Start Game</span>
                         <div className=" my-auto">
@@ -90,7 +92,7 @@ const DnDGame = () => {
                         </div>
                         <span className="my-auto">Back</span>
                     </button>
-                    <button onClick={() => {setTime(0); setCorrect([])}} className="transtion duration-150 space-x-2 bg-gray-200 dark:bg-gray-700 dark:hover:bg-indigo-600 hover:bg-indigo-400 hover:text-white px-5 py-2 lg:px-7 lg:py-3 rounded-full text-base flex">
+                    <button onClick={() => {setTime(0); setCorrect([]); setTimeCount(true)}} className="transtion duration-150 space-x-2 bg-gray-200 dark:bg-gray-700 dark:hover:bg-indigo-600 hover:bg-indigo-400 hover:text-white px-5 py-2 lg:px-7 lg:py-3 rounded-full text-base flex">
                         <span className="my-auto">Reset</span>
                     </button>
                     <div className="flex space-x-2 bg-green-200 dark:bg-green-600 px-5 py-2 lg:px-7 lg:py-3 rounded-full  lg:text-lg ml-auto">

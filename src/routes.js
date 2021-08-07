@@ -6,6 +6,7 @@ const Kana = React.lazy(() => import('./views/Kana'));
 const Search = React.lazy(() => import('./views/Search'));
 const Kanji = React.lazy(() => import('./views/Kanji'));
 const KanjiDetail = React.lazy(() => import('./views/KanjiDetail'));
+const Game = React.lazy(() => import('./views/Game'));
 const DnDGame = React.lazy(() => import('./views/DnDGame'));
 const routes = [
     { path: '/', exact: true, name: 'Home', component: Home },
@@ -14,7 +15,7 @@ const routes = [
     { path: '/search/', exact: true, name: 'Search', component: Search },
     { path: '/kanji/:id', exact: true, name: 'Kanji Detail', component: KanjiDetail },
     { path: '/kanji', exact: true, name: 'Kanji', component: Kanji },
-    { path: '/game', name: 'Game' },
+    { path: '/game', exact: true, name: 'Game', component: Game },
     { path: '/game/pairing-kana', exact: true, name: 'Pairing Kana', component: DnDGame },
     { path: '/404', name: '404 Not Found', component: NotFound },
     { path: '*', name: '404 Not Found', component: NotFound },
