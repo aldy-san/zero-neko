@@ -27,6 +27,7 @@ const DropBox = (props) =>{
     return(
         <li 
             draggable
+            autoScroll
             onClick={() => props.onSetDragItem(props.kana)}
             onDragStart={(e) => onDragStart(e)}
             onDragEnd={(e) => onDragEnd(e)} 

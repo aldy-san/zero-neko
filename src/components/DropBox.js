@@ -14,9 +14,9 @@ const DropBox = (props) =>{
     
     return(
         <li 
-        onClick={() => props.onSetDropItem(props.kana)}
-        onDragOver={(e) => e.preventDefault()} 
-        onDrop={() => props.onSetDropItem(props.kana)} 
+        onClick={() => props.correct ? false : props.onSetDropItem(props.kana)}
+        onDragOver={(e) => props.correct ? false : e.preventDefault()} 
+        onDrop={() => props.correct ? false : props.onSetDropItem(props.kana)} 
         className={(props.correct ? "border-green-400" : "border-gray-700 dark:border-gray-500")+" text-center font-bold border-2 rounded-md lg:text-2xl px-1 py-2 lg:py-4 cursor-pointer " + (props.kana.start && "col-start-"+props.kana.start+" lg:col-start-auto lg:row-start-"+props.kana.start)}>
             <span>{kana}</span>
         </li>
