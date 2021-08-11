@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import n1csv from '../data/words/n1.csv';
+import { n1 } from "../data/words/n1";
 import { isKana, toRomaji } from 'wanakana';
 const Typerace = () => {
     const [word, setWord] = useState("");
@@ -12,28 +12,14 @@ const Typerace = () => {
     let input = useRef(null)
     
     const getWord = useCallback(() => {
-        fetch(n1csv,{
-            headers : { 
-              'Content-Type': 'application/csv',
-              'Content-disposition': 'attachment;filename=n1.csv'
-             }
-           }
-        )
-        .then(rs => rs.text())
-        .then(text => {
-            let tempWord = text.split('\r\n')[Math.floor(Math.random() * text.split('\n').length)]; //
-            console.log(tempWord);
-            if (!isKana(tempWord.split(',')[1])) {
-                getWord();
-            } else {
-                if (tempWord.split(',')[2][0] === '"') {
-                    setMeaning(tempWord.split('"')[1]);
-                } else {
-                    setMeaning(tempWord.split(',')[2])
-                }
-                setWord(tempWord.split(',')[1]);
-            }
-        });
+        let tempWord = n1[Math.floor(Math.random() * n1.length)]; //
+        console.log(tempWord);
+        if (!isKana(tempWord.reading)) {
+            getWord();
+        } else {
+            setMeaning(tempWord.meaning);
+            setWord(tempWord.reading);
+        }
     }, [])
     useEffect(() => {
         const get = () => {
