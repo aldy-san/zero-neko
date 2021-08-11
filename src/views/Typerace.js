@@ -12,7 +12,13 @@ const Typerace = () => {
     let input = useRef(null)
     
     const getWord = useCallback(() => {
-        fetch(n1csv)
+        fetch(n1csv,{
+            headers : { 
+              'Content-Type': 'application/csv',
+              'Content-disposition': 'attachment;filename=n1.csv'
+             }
+           }
+        )
         .then(rs => rs.text())
         .then(text => {
             let tempWord = text.split('\r\n')[Math.floor(Math.random() * text.split('\n').length)]; //
