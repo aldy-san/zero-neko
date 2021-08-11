@@ -16,8 +16,7 @@ const Typerace = () => {
         .then(rs => rs.text())
         .then(text => {
             let tempWord = text.split('\r\n')[Math.floor(Math.random() * text.split('\n').length)]; //
-            // console.log(tempWord);
-            // console.log(isKana("～まる"));
+            console.log(tempWord);
             if (!isKana(tempWord.split(',')[1])) {
                 getWord();
             } else {
