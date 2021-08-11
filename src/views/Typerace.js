@@ -52,7 +52,7 @@ const Typerace = () => {
         return () => {
             clearInterval(interval);
         };
-    }, [game, time, result])
+    }, [game, time, score])
     const convertTime = (num) => {
         let res = "";
         let minutes = (Math.floor(num / 60));
