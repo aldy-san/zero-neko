@@ -35,7 +35,9 @@ const Typerace = () => {
                     setTime(t => t - 1);
                 } else {
                     setResult(true);
-                    setLastScore(score);
+                    if (score > 0) {
+                        setLastScore(score);
+                    }
                     setScore(0);
                 }
             }
