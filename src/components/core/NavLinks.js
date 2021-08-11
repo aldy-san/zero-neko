@@ -20,10 +20,10 @@ const NavLinks = (props) => {
                     </svg>
                 </div>
             </div>
-            <div className={(props.nav.type !== "dropdown" ? "hidden" : (show ? "flex" : "hidden"))+" absolute justify-center top-12 -left-16 w-32 z-10 bg-gray-200 dark:bg-gray-900 p-4 rounded-md"}>
+            <div className={(props.nav.type !== "dropdown" ? "hidden" : (show ? "flex" : "hidden"))+" absolute justify-center top-12 -left-16 w-32 z-10 bg-gray-200 dark:bg-gray-900 p-4 rounded-md border border-gray-200 dark:border-gray-700"}>
                 <ul className="flex flex-col space-y-3">
-                    <Link className="font-bold text-gray-500 hover:text-gray-700 dark:hover:text-gray-300" to={"/game/pairing-kana"}>Pairing Kana</Link>
-                    {/* <Link className="font-bold text-gray-500 hover:text-gray-700 dark:hover:text-gray-300" to={"/game/type-racing"}>Typeracing</Link> */}
+                    <Link className="font-bold text-gray-900 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-400 whitespace-nowrap" to={"/game/pairing-kana"}>Pairing Kana</Link>
+                    <Link className="font-bold text-gray-900 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-400 whitespace-nowrap" to={"/game/typerace"}>Typeracing</Link>
                 </ul>
             </div>
         </li>
