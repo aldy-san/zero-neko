@@ -14,7 +14,7 @@ const NavLinks = (props) => {
             </NavLink>
             <div className={(props.nav.type === "dropdown" ? "flex" : "hidden ")+" transition-all delay-150  text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 font-semibold text-lg tracking-wider cursor-pointer"}>
                 <span>{props.nav.title}</span>
-                <div className={"my-auto"}>
+                <div className={(show ? "transform rotate-180 " : "")+ "my-auto"}>
                     <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" d="M15.25 10.75L12 14.25L8.75 10.75"></path>
                     </svg>

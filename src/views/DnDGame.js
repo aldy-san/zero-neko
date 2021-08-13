@@ -79,7 +79,7 @@ const DnDGame = () => {
     return(
         <div className="flex flex-col lg:mx-20 py-4 lg:p-4">
             <h1 className="text-3xl lg:text-4xl font-bold text-center">Pairing Kana</h1>
-            <div className={(game ? "hidden" : "flex") + " rounded-xl  border-gray-800 dark:border-gray-500 py-12 flex-col mx-auto"}>
+            <div className={(game ? "hidden" : "flex") + " rounded-xl border-gray-800 dark:border-gray-500 py-12 flex-col mx-auto"}>
                 <span className="text-xl lg:text-3xl text-center font-black mb-3">Setting</span>
                 <div className="flex space-x-8 py-3 lg:p-8">
                     <div className="flex flex-col space-y-4">
@@ -97,7 +97,7 @@ const DnDGame = () => {
                 </div>
                 <div className="flex">
                     <button onClick={() => handleStart()} 
-                    className="flex transition-all delay-75 px-6 py-4 lg:px-8 mt-4 rounded-full mx-auto  bg-gray-200 text-gray-600 dark:text-gray-100 dark:hover:text-white hover:bg-primary hover:text-white dark:bg-gray-700 dark:bg-opacity-80 dark:hover:bg-primary text-lg lg:text-3xl">
+                    className="flex transition-all delay-75 px-6 py-4 lg:px-8 mt-4 rounded-lg mx-auto  bg-gray-200 text-gray-600 dark:text-gray-100 dark:hover:text-white hover:bg-primary hover:text-white dark:bg-gray-700 dark:bg-opacity-80 dark:hover:bg-primary text-lg lg:text-3xl focus:ring-2 focus:ring-primary ring-offset-4 focus:outline-none dark:ring-offset-gray-800">
                         <span className="mr-2">Start Game</span>
                         <div className=" my-auto">
                             <svg  width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -110,7 +110,7 @@ const DnDGame = () => {
             </div>
             <div className={(game ? "flex" : "hidden") + " flex-col space-y-8 px-4 py-8 rounded-md select-none mt-4"}>
                 <div className="flex lg:mx-6">
-                    <button onClick={() => handleBack()} className="transtion duration-150 space-x-2 mr-2 bg-gray-200 dark:bg-gray-700 dark:hover:bg-primary hover:bg-primary hover:text-white px-5 py-2 lg:px-7 lg:py-3 rounded-full text-base flex focus:outline-none focus:ring-2 focus:ring-primary">
+                    <button onClick={() => handleBack()} className="transtion duration-150 space-x-2 mr-2 bg-gray-200 dark:bg-gray-700 dark:hover:bg-primary hover:bg-primary hover:text-white px-5 py-2 lg:px-7 lg:py-3 rounded-lg text-base flex focus:outline-none focus:ring-2 focus:ring-primary ring-offset-2 dark:ring-offset-gray-800">
                         <div className="my-auto">
                             <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" d="M10.25 6.75L4.75 12L10.25 17.25"></path>
@@ -119,10 +119,10 @@ const DnDGame = () => {
                         </div>
                         <span className="my-auto">Back</span>
                     </button>
-                    <button onClick={() => handleReset()} className="transtion duration-150 space-x-2 bg-gray-200 dark:bg-gray-700 dark:hover:bg-indigo-600 hover:bg-indigo-400 hover:text-white px-5 py-2 lg:px-7 lg:py-3 rounded-full text-base flex focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <button onClick={() => handleReset()} className="transtion duration-150 space-x-2 bg-gray-200 dark:bg-gray-700 dark:hover:bg-indigo-600 hover:bg-indigo-400 hover:text-white px-5 py-2 lg:px-7 lg:py-3 rounded-lg text-base flex focus:outline-none focus:ring-2 focus:ring-indigo-500 ring-offset-2 dark:ring-offset-gray-800">
                         <span className="my-auto">Reset</span>
                     </button>
-                    <div className="flex space-x-2 bg-green-200 dark:bg-green-600 px-5 py-2 lg:px-7 lg:py-3 rounded-full  lg:text-lg ml-auto">
+                    <div className="flex space-x-2 bg-green-200 dark:bg-green-600 px-5 py-2 lg:px-7 lg:py-3 rounded-lg  lg:text-lg ml-auto">
                         <div className="my-auto">
                             <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <circle cx="12" cy="12" r="7.25" stroke="currentColor" ></circle>
