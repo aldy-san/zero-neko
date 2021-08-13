@@ -29,15 +29,15 @@ const BottomNav = () =>{
                         <SearchBox/>
                     </div>
                 </div>
-                <ul className={(searchShow ? "hidden" : "flex")}>
+                <ul className={(searchShow ? "hidden" : "flex h-full")}>
                 {
                     navLinks.map((nav, idx) => {
-                        return  <BottomNavLink key={idx} title={nav.title} symbol={nav.symbol} path={nav.path}/>
+                        return  <BottomNavLink key={idx} title={nav.title} icon={nav.icon} path={nav.path}/>
                     })
                 }
                 </ul>
             </div>
-            <button aria-label="Search" onClick={handleSearchShow} className="absolute -top-9 bg-gray-50 shadow-md dark:bg-[#192236] rounded-full p-4 dark:text-white">
+            <button aria-label="Search" onClick={handleSearchShow} className="absolute -top-12 bg-gray-50 shadow-md dark:bg-[#192236] focus:outline-none active:ring-2 active:ring-primary ring-offset-2 dark:ring-offset-transparent rounded-full p-4 dark:text-white">
                 {(searchShow ? iconClose : iconSearch)}
             </button>
         </nav>

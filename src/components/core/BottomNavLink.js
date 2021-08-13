@@ -6,12 +6,15 @@ const BottomNavLink = (props) =>{
     return(
         <li className="flex flex-1 transition-all w-2/12 delay-150 text-center text-gray-400 dark:text-gray-400 focus:outline-none text-sm" >
             <NavLink 
-            className="pt-8 pb-6  w-full"
+            className="flex flex-col space-y-2 w-full h-full"
             exact={props.path==='/'} 
             aria-label={props.title} 
             to={props.path}
-            activeClassName="text-black dark:text-white border-b-4   border-primary">
-                {props.title}
+            activeClassName="text-black dark:text-white border-b-2 border-primary">
+                <div className="flex flex-col my-auto space-y-1">
+                    <span className="text-lg">{props.icon}</span>
+                    <span className="">{props.title}</span>
+                </div>
             </NavLink>
         </li>
     )
