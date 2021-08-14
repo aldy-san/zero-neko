@@ -3,9 +3,7 @@ import { useMediaQuery } from 'react-responsive'
 import axios from 'axios';
 
 const KanjiBox = (props) =>{
-    const isDesktopOrLaptop = useMediaQuery({
-        query: '(min-device-width: 1024px)'
-    })
+    const isDesktopOrLaptop = useMediaQuery({ query: '(min-device-width: 1024px)' })
     const [kanji, setKanji] = useState();
     useEffect(() => {
         const fetchData = async () => {
