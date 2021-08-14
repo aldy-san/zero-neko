@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from 'react'
+import { useMediaQuery } from 'react-responsive'
 
 const DropBox = (props) =>{
     const [kana, setKana] = useState();
-    const [show, setShow] = useState(true)
+    const [show, setShow] = useState(true);
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
     useEffect(() => {
         if (props.category === "Hiragana") {
             setKana(props.kana.hiragana) 
@@ -14,15 +16,16 @@ const DropBox = (props) =>{
     }, [kana, props])
     const onDragStart = (e) => {
         props.onSetDragItem(props.kana)
-        setTimeout(() => {
-            setShow(false)
-            e.dataTransfer.setData(props.kana, e.target.id);
-        }, 10);
+        if (!isTabletOrMobile) {
+            setTimeout(() => {
+                setShow(false)
+                e.dataTransfer.setData(props.kana, e.target.id);
+            }, 10);
+        }
+        
     }
     const onDragEnd = (e) => {
         setShow(true)
-        // e.target.classList.remove("hidden")
-        // e.dataTransfer.setData(props.kana, e.target.id);
     }
     return(
         <li 
