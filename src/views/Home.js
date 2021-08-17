@@ -23,7 +23,7 @@ const Home = () => {
             </Fade>
             <Fade bottom>
                 <section className="flex flex-col m-8">
-                    <h1 className="animate-bounce block text-4xl text-center font-black font-head uppercase my-4">How to search?</h1>
+                    <h1 className="animate-bounce block text-4xl text-center font-black font-head uppercase my-4 whitespace-nowrap">How to search?</h1>
                     <hr className="h-1 w-48 bg-primary border-none mx-auto mb-9 lg:mb-12 " />
                     <div className="flex flex-col lg:flex-row gap-8">
                         <div className="mx-auto order-last lg:order-first">
