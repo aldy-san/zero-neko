@@ -12,7 +12,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily:{
-        sans: ["'Varela Round', sans-serif", ...defaultTheme.fontFamily.sans]
+        sans: ["'Varela Round', sans-serif", ...defaultTheme.fontFamily.sans],
+        head: ["'M PLUS Rounded 1c', sans-serif", ...defaultTheme.fontFamily.sans]
       },
       boxShadow: {
         'mdWhite': '0 4px 6px -1px rgba(229, 231, 235, 0.1), 0 2px 4px -1px rgba(229, 231, 235, 0.03)',
