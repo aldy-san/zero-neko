@@ -20,6 +20,8 @@ git clone https://github.com/<your-github-username>/zero-neko.git
 ```
 git remote add upstream https://github.com/aldy-san/zero-neko
 
+```
+
 **4.** Check the remotes for this repository.
 
 ```
