@@ -1,4 +1,6 @@
-# WEBSITE TO LEARN JAPANESE LANGUAGE
+![Banner](https://user-images.githubusercontent.com/63385587/135677116-c53fa431-1842-4d2f-8804-7179c7aa0aa4.png)
+
+# A WEBSITE TO LEARN JAPANESE LANGUAGE 🌱
 
 - This project is a website that provide dictionary and game to help everyone learn Japanese language.
 - This website made with ReactJS and TailwindCSS
