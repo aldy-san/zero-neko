@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect} from "react";
 import {kana} from "../data/kana";
 import H2 from "../components/H2";
 import CategoryRadioButton from "../components/CategoryRadioButton";
@@ -16,6 +16,7 @@ const DnDGame = () => {
     const [correct, setCorrect] = useState([]);
     const [time, setTime] = useState(0);
     const [timeCount, setTimeCount] = useState(false);
+    const [isStartDisabled, setIsStartDisabled] = useState(false);
     //audio
     const [correctAudio] = useState(new Audio(correctURL));
     const [wrongAudio] = useState(new Audio(wrongURL));
@@ -52,6 +53,11 @@ const DnDGame = () => {
             clearInterval(interval);
         };
     }, [timeCount, correct, winAudio])
+
+    // disable the button if `from` and `to` are the same
+    useEffect(() => {
+        setIsStartDisabled(from === to);
+    }, [from, to]);
 
     const convertTime = (num) => {
         let res = "";
@@ -97,7 +103,8 @@ const DnDGame = () => {
                 </div>
                 <div className="flex">
                     <button onClick={() => handleStart()} 
-                    className="flex transition-all delay-75 px-6 py-4 lg:px-8 mt-4 text-lg lg:text-3xl rounded-lg mx-auto bg-gray-200 text-gray-600 dark:text-gray-100 dark:hover:text-white hover:bg-primary hover:text-white dark:bg-gray-700 dark:bg-opacity-80 dark:hover:bg-primary focus:ring-2 focus:ring-primary ring-offset-4 focus:outline-none dark:ring-offset-gray-800">
+                    className={`flex transition-all delay-75 px-6 py-4 lg:px-8 mt-4 text-lg lg:text-3xl rounded-lg mx-auto bg-gray-200 ${isStartDisabled ? "text-gray-400 dark:text-gray-600" : "text-gray-600 dark:text-gray-100 dark:hover:text-white"} ${!isStartDisabled && "hover:bg-primary hover:text-white"} dark:bg-gray-700 dark:bg-opacity-80 ${!isStartDisabled && "dark:hover:bg-primary"} focus:ring-2 focus:ring-primary ring-offset-4 focus:outline-none dark:ring-offset-gray-800 ${isStartDisabled && "cursor-not-allowed"}`}
+                    disabled={isStartDisabled}>
                         <span className="mr-2">Start Game</span>
                         <div className=" my-auto">
                             <svg  width="24" height="24" fill="none" viewBox="0 0 24 24">
