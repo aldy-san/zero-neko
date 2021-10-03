@@ -1,4 +1,4 @@
-# write your game idea below
+# Write your game idea below
 
 - some idea
 - some idea
