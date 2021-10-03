@@ -103,7 +103,7 @@ const DnDGame = () => {
                 </div>
                 <div className="flex">
                     <button onClick={() => handleStart()} 
-                    className="flex transition-all delay-75 px-6 py-4 lg:px-8 mt-4 text-lg lg:text-3xl rounded-lg mx-auto bg-gray-200 text-gray-600 dark:text-gray-100 dark:hover:text-white hover:bg-primary hover:text-white dark:bg-gray-700 dark:bg-opacity-80 dark:hover:bg-primary focus:ring-2 focus:ring-primary ring-offset-4 focus:outline-none dark:ring-offset-gray-800"
+                    className={`flex transition-all delay-75 px-6 py-4 lg:px-8 mt-4 text-lg lg:text-3xl rounded-lg mx-auto bg-gray-200 text-gray-600 dark:text-gray-100 dark:hover:text-white ${!startDisabled && 'hover:bg-primary hover:text-white'} dark:bg-gray-700 dark:bg-opacity-80 ${!startDisabled && 'dark:hover:bg-primary'} focus:ring-2 focus:ring-primary ring-offset-4 focus:outline-none dark:ring-offset-gray-800 ${startDisabled && 'cursor-not-allowed'}`}
                     disabled={startDisabled}>
                         <span className="mr-2">Start Game</span>
                         <div className=" my-auto">
