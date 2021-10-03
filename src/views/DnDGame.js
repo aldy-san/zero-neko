@@ -16,6 +16,7 @@ const DnDGame = () => {
     const [correct, setCorrect] = useState([]);
     const [time, setTime] = useState(0);
     const [timeCount, setTimeCount] = useState(false);
+    const [startDisabled, setStartDisabled] = useState(false);
     //audio
     const [correctAudio] = useState(new Audio(correctURL));
     const [wrongAudio] = useState(new Audio(wrongURL));
@@ -52,6 +53,11 @@ const DnDGame = () => {
             clearInterval(interval);
         };
     }, [timeCount, correct, winAudio])
+
+    // disable the button if `from` and `to` are the same
+    useEffect(() => {
+        setStartDisabled(from === to);
+    }, [from, to]);
 
     const convertTime = (num) => {
         let res = "";
