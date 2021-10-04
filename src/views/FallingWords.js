@@ -61,14 +61,17 @@ const FallingWords = () => {
     }
 
     useEffect(() => {
-        window.addEventListener('resize',loadGame)
-        return () => window.removeEventListener('resize',loadGame)
-    },[])
+        function handleResize(){
+            loadGame()
+        }
+        window.addEventListener('resize',handleResize)
+        return () => window.removeEventListener('resize',handleResize)
+    })
+
 
     function loadGame(difficultyId,alphabet) {
         difficultyId = Number.isFinite(difficultyId) ? difficultyId : selectedDifficulty 
         alphabet = alphabet ? alphabet : chosenAlphabet
-        console.log(alphabet)
         let game = new Game(difficulties[difficultyId],alphabet)
         let words = [game.getRandomWord()]
         setGame(game)
@@ -117,7 +120,7 @@ const FallingWords = () => {
         <div className="flex flex-col items-center space-y-2">
             <div className='flex flex-wrap gap-1 p-2'>
                 {difficulties.map(difficulty => <button
-                    id={difficulty.id}
+                    key={difficulty.id}
                     className={`${difficulty.id === selectedDifficulty ? "bg-primary" : "bg-gray-200 dark:bg-gray-700"} p-2 px-4 dark:hover:text-white bg-opacity-80 hover:bg-opacity-70 dark:hover:bg-opacity-70 rounded-lg cursor-pointer`}
                     onClick={() => handleDifficultyChange(difficulty.id)}
                 >
@@ -127,8 +130,8 @@ const FallingWords = () => {
                     className="bg-gray-200 dark:bg-gray-700 p-2 px-4 dark:hover:text-white bg-opacity-80 hover:bg-opacity-70 dark:hover:bg-opacity-70 rounded-lg cursor-pointer"
                     onChange={e => handleAlphabetChange(e.target.value.toLowerCase())}
                 >
-                    <option>Hiragana</option>
-                    <option>Katakana</option>
+                    <option key='Hiragana'>Hiragana</option>
+                    <option key='Katakana'>Katakana</option>
                 </select>
             </div>
 
