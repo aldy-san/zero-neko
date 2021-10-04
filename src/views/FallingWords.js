@@ -87,7 +87,7 @@ const FallingWords = () => {
         })
         words.forEach(word => {
             if (word.y < game.height - 5) return
-            setCurrentText("You lost!")
+            setCurrentText("You lost!, set difficulty to start game again..")
             changeInputColor('#dc2626')
             setIsStarted(false)
         })
