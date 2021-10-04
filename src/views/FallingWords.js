@@ -126,23 +126,25 @@ const FallingWords = () => {
                 >
                     {difficulty.name}
                 </button>)}
-                <select 
-                    className="bg-gray-200 dark:bg-gray-700 p-2 px-4 dark:hover:text-white bg-opacity-80 hover:bg-opacity-70 dark:hover:bg-opacity-70 rounded-lg cursor-pointer"
-                    onChange={e => handleAlphabetChange(e.target.value.toLowerCase())}
-                >
-                    <option key='Hiragana'>Hiragana</option>
-                    <option key='Katakana'>Katakana</option>
-                </select>
+                <div className="bg-gray-200 dark:bg-gray-700 dark:hover:text-white bg-opacity-80 hover:bg-opacity-70 dark:hover:bg-opacity-70 rounded-lg">
+                    <select 
+                        className="bg-gray-200 dark:bg-gray-700 dark:hover:text-white bg-transparent outline-none my-2 mx-4"
+                        onChange={e => handleAlphabetChange(e.target.value.toLowerCase())}
+                    >
+                        <option key='Hiragana'>Hiragana</option>
+                        <option key='Katakana'>Katakana</option>
+                    </select>
+                </div>
             </div>
 
             <div className='flex-col space-y-2 '>
-                <div className="rounded-lg" style={{ overflow: "hidden" }}>
+                <div className="rounded-lg bg-gray-200 dark:bg-gray-700" style={{ overflow: "hidden" }}>
                     <Stage
                         width={game.width}
                         height={game.height}
                         options={{
-                            backgroundColor: 0x374151,
-                            autoDensity: true
+                            autoDensity: true,
+                            transparent: true
                         }
                     }>
                         <Text
@@ -163,7 +165,7 @@ const FallingWords = () => {
                             y={word.y}
                             style={new TextStyle({
                                 align: 'center',
-                                fill: 0xffffff,
+                                fill: 0xf76d70,
                             })}
                         />)}
 
@@ -181,7 +183,7 @@ const FallingWords = () => {
                 </div>
                 <input
                     placeholder="Type here, space to check"
-                    className={`outline-none w-full p-2 hover:bg-opacity-70  rounded-lg bg-gray-200 dark:bg-gray-700 placeholder-gray-50`}
+                    className={`outline-none w-full p-2 hover:bg-opacity-70  rounded-lg bg-gray-200 dark:bg-gray-700 text-black dark:text-white dark:placeholder-gray-50`}
                     style={{ backgroundColor: inputColor }}
                     onChange={(e) => handleInput(e)}
                     value={currentText}
