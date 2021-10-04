@@ -17,6 +17,9 @@ const Kana = () => {
                     <Link to="game/typerace" className="text-gray-600 dark:text-gray-300 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-xl py-3 w-full rounded-lg cursor-pointer">
                         <span>Typerace</span>
                     </Link>
+                    <Link to="game/fallingWords" className="text-gray-600 dark:text-gray-300 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-xl py-3 w-full rounded-lg cursor-pointer">
+                        <span>Falling Words</span>
+                    </Link>
                     {/* <li className="text-gray-600 dark:text-gray-300 bg-gray-200  dark:bg-gray-900  text-xl mx-auto py-3 px-6 rounded-full ">
                         <span>Typeracing</span>
                         <span className="block text-primary text-sm"> Soon </span>
