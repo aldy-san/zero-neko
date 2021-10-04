@@ -9,6 +9,7 @@ const KanjiDetail = React.lazy(() => import('./views/KanjiDetail'));
 const Game = React.lazy(() => import('./views/Game'));
 const DnDGame = React.lazy(() => import('./views/DnDGame'));
 const Typerace = React.lazy(() => import('./views/Typerace'));
+const FallingWords = React.lazy(() => import('./views/FallingWords'));
 const routes = [
     { path: '/', exact: true, name: 'Home', component: Home },
     { path: '/hiragana', exact: true, symbol: 'あ', name: 'Hiragana', component: Kana },
@@ -19,6 +20,7 @@ const routes = [
     { path: '/game', exact: true, name: 'Game', component: Game },
     { path: '/game/pairing-kana', exact: true, name: 'Pairing Kana', component: DnDGame },
     { path: '/game/typerace', exact: true, name: 'Typerace', component: Typerace },
+    { path: '/game/fallingWords', exact: true, name: 'Falling Words', component: FallingWords },
     { path: '/404', name: '404 Not Found', component: NotFound },
     { path: '*', name: '404 Not Found', component: NotFound },
 ]
