@@ -8,7 +8,21 @@
 - Follow our Official Instagram acc for daily post Japanese lesson at [@zeroneko.learn](https://www.instagram.com/zeroneko.learn/)
 - Feel free to star this repository, thanks.
 
-## 📌Contributing Guidelines :
+## 📌How to run
+
+**1.** Install packages using `npm`.
+
+```
+npm run install
+```
+
+**2.** Just run it.
+
+```
+npm run start
+```
+
+## 📌Contributing Guidelines
 
 **1.** Fork [this](https://github.com/aldy-san/zero-neko) repository.
 
